@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://mrzapto.online/farq-al-omor.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حاسبة فرق العمر بين الزوجين - احسب الفرق بدقة</title>
+<meta name="description" content="احسب فرق العمر بين الزوجين أو أي شخصين بدقة كاملة بالسنوات والأشهر والأيام. أداة مجانية وسريعة دون تسجيل.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"كيف أحسب فرق العمر بين الزوجين؟","acceptedAnswer":{"@type":"Answer","text":"أدخل تاريخ ميلاد كل من الطرفين في الحاسبة أعلاه، وستحصل فوراً على الفرق الدقيق بالسنوات والأشهر والأيام."}},
+    {"@type":"Question","name":"هل يمكن استخدام هذه الحاسبة لغير الأزواج؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكنك استخدامها لحساب فرق العمر بين أي شخصين، سواء إخوة أو أصدقاء أو زملاء عمل."}},
+    {"@type":"Question","name":"هل تراعي الحاسبة السنوات الكبيسة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة وتضبط الفرق بدقة وفقاً لذلك."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --teal-900:#123C3D; --teal-700:#1D5253; --gold-600:#C9973B; --gold-700:#A97C29;
+    --sand-50:#F2F5F3; --cream:#FFFDF8; --ink-900:#1B1F1E; --ink-600:#55605B; --moon-100:#E7ECEF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Tajawal', sans-serif; background:var(--sand-50); color:var(--ink-900); line-height:1.7;}
+  h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
+  a{color:var(--gold-700);}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px;}
+  .prose{max-width:760px; color:var(--ink-600); font-size:16px;}
+  .prose p{margin-bottom:14px;}
+  .prose ul,.prose ol{padding-right:20px; margin-bottom:14px;}
+  .prose li{margin-bottom:8px;}
+
+  header{background:var(--teal-900); padding:18px 0;}
+  .brand{color:var(--cream); font-size:22px; font-weight:800; text-decoration:none;}
+
+  .hero{background:var(--teal-900); padding:50px 0 90px;}
+  .hero h1{color:var(--cream); font-size:clamp(24px,4vw,36px); font-weight:800; max-width:680px; margin-bottom:14px;}
+  .hero p.sub{color:var(--moon-100); max-width:560px; font-size:17px;}
+
+  .calc-card{
+    background:var(--cream); border-radius:14px; padding:30px; margin-top:34px;
+    box-shadow:0 20px 40px rgba(18,60,61,0.25); border-top:4px solid var(--gold-600);
+  }
+  .two-people{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media(max-width:560px){.two-people{grid-template-columns:1fr;}}
+  .person-box{background:var(--sand-50); border-radius:10px; padding:18px;}
+  .person-box h3{font-size:15px; margin-bottom:10px; color:var(--teal-900);}
+  .field{margin-bottom:0;}
+  .field label{display:block; font-weight:700; margin-bottom:8px; font-size:14px;}
+  .field input[type=date]{
+    width:100%; padding:12px 14px; border:2px solid var(--moon-100); border-radius:8px;
+    font-family:'Tajawal', sans-serif; font-size:15px; background:#fff;
+  }
+  .field input[type=date]:focus{outline:3px solid var(--gold-600); border-color:var(--gold-600);}
+  .btn-main{
+    display:block; width:100%; background:var(--gold-600); color:var(--teal-900); border:none; padding:14px 34px;
+    border-radius:8px; font-family:'Almarai', sans-serif; font-weight:800; font-size:16px;
+    cursor:pointer; transition:background .2s; margin-top:20px;
+  }
+  .btn-main:hover{background:var(--gold-700);}
+
+  #results{display:none; margin-top:26px;}
+  .result-main{
+    background:linear-gradient(135deg,var(--gold-600),var(--gold-700)); color:var(--teal-900);
+    padding:26px; border-radius:12px; text-align:center;
+  }
+  .result-main h3{font-size:16px; margin-bottom:10px; font-weight:700;}
+  .result-main .big{font-size:34px; font-weight:800; font-family:'Almarai',sans-serif;}
+  .result-main .small{font-size:15px; opacity:.9; margin-top:8px;}
+
+  section{padding:50px 0;}
+  section h2{font-size:24px; margin-bottom:20px; text-align:center;}
+
+  .steps{display:flex; gap:24px; flex-wrap:wrap; justify-content:center;}
+  .step{flex:1; min-width:220px; text-align:center;}
+  .step .num{
+    width:44px; height:44px; border-radius:50%; background:var(--gold-600); color:var(--teal-900);
+    display:flex; align-items:center; justify-content:center; font-weight:800;
+    font-family:'Almarai',sans-serif; margin:0 auto 14px;
+  }
+
+  .feature-row{display:flex; gap:20px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--moon-100);}
+  .feature-row:last-child{border-bottom:none;}
+  .feature-row .bar{width:5px; align-self:stretch; background:var(--gold-600); border-radius:4px; flex-shrink:0;}
+  .feature-row h3{font-size:17px; margin-bottom:6px;}
+  .feature-row p{color:var(--ink-600); font-size:15px;}
+
+  .faq-item{border-bottom:1px solid var(--moon-100); padding:16px 0;}
+  .faq-item summary{cursor:pointer; font-weight:700; font-size:16px; list-style:none;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::before{content:"+"; color:var(--gold-700); font-weight:800; margin-left:10px;}
+  .faq-item[open] summary::before{content:"−";}
+  .faq-item p{margin-top:10px; color:var(--ink-600);}
+
+  .cta-box{background:var(--teal-900); color:var(--cream); border-radius:10px; padding:22px; text-align:center; margin-top:10px;}
+  .cta-box a{color:var(--gold-600); font-weight:800; text-decoration:none;}
+  .related{margin-top:16px; font-size:15px; text-align:center;}
+
+  footer{background:var(--teal-900); color:var(--moon-100); text-align:center; padding:26px 0; font-size:14px;}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><a href="/" class="brand">حساب العمر</a></div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>حاسبة فرق العمر بين الزوجين</h1>
+    <p class="sub">أدخل تاريخ ميلاد كل طرف، واحصل فوراً على الفرق الدقيق بينهما بالسنوات والأشهر والأيام.</p>
+
+    <div class="calc-card">
+      <div class="two-people">
+        <div class="person-box">
+          <h3>الشخص الأول</h3>
+          <div class="field">
+            <label for="date1">تاريخ الميلاد</label>
+            <input type="date" id="date1">
+          </div>
+        </div>
+        <div class="person-box">
+          <h3>الشخص الثاني</h3>
+          <div class="field">
+            <label for="date2">تاريخ الميلاد</label>
+            <input type="date" id="date2">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-main" onclick="calculateDifference()">احسب الفرق</button>
+
+      <div id="results">
+        <div class="result-main">
+          <h3>فرق العمر بين الطرفين</h3>
+          <div class="big" id="diffBig">-</div>
+          <div class="small" id="diffWho">-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- YAHAN SE ARTICLE CONTENT AAYEGA (placeholder abhi) -->
+<!-- ================================================ -->
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>كيف تستخدم حاسبة فرق العمر؟</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>أدخل تاريخ ميلاد الطرف الأول</h3><p>حدد يوم وشهر وسنة الميلاد بدقة.</p></div>
+      <div class="step"><div class="num">2</div><h3>أدخل تاريخ ميلاد الطرف الثاني</h3><p>نفس الخطوة للشخص الآخر.</p></div>
+      <div class="step"><div class="num">3</div><h3>اضغط احسب الفرق</h3><p>النتيجة تظهر فوراً مع تحديد من هو الأكبر سناً.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>مميزات الحاسبة</h2>
+    <div class="feature-row"><div class="bar"></div><div><h3>دقة كاملة بالسنوات والأشهر والأيام</h3><p>ليس مجرد فرق سنوات تقريبي، بل حساب دقيق حتى اليوم.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>مناسبة لأي شخصين</h3><p>استخدمها للزوجين، الإخوة، الأصدقاء، أو أي مقارنة عمرية تحتاجها.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>دقة تلقائية مع السنوات الكبيسة</h3><p>الحاسبة تضبط النتيجة تلقائياً دون أي تدخل يدوي.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>مجانية بالكامل وبلا تسجيل</h3><p>استخدمها عدد المرات الذي تريده دون أي رسوم.</p></div></div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>الأسئلة الشائعة</h2>
+    <details class="faq-item" open>
+      <summary>كيف أحسب فرق العمر بين الزوجين؟</summary>
+      <p>أدخل تاريخ ميلاد كل من الطرفين في الحاسبة أعلاه، وستحصل فوراً على الفرق الدقيق بالسنوات والأشهر والأيام.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل يمكن استخدام هذه الحاسبة لغير الأزواج؟</summary>
+      <p>نعم، يمكنك استخدامها لحساب فرق العمر بين أي شخصين، سواء إخوة أو أصدقاء أو زملاء عمل.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل تراعي الحاسبة السنوات الكبيسة؟</summary>
+      <p>نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة وتضبط الفرق بدقة وفقاً لذلك.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-box">
+      <p>تريد معرفة عمرك أنت بالهجري والميلادي؟</p>
+      <a href="/">استخدم الحاسبة الرئيسية من هنا ←</a>
+    </div>
+    <div class="related">
+      <p>صفحات ذات صلة: <a href="/hisab-al-omor-belmiladi.html">حساب العمر بالميلادي</a> · <a href="/kam-omri-belhijri.html">كم عمري بالهجري</a></p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 حساب العمر - جميع الحقوق محفوظة</div></footer>
+
+<script>
+function calculateDifference(){
+  const d1input = document.getElementById('date1').value;
+  const d2input = document.getElementById('date2').value;
+
+  if(!d1input || !d2input){ alert('الرجاء إدخال تاريخي الميلاد'); return; }
+
+  let date1 = new Date(d1input + 'T00:00:00');
+  let date2 = new Date(d2input + 'T00:00:00');
+
+  let olderDate, youngerDate, olderLabel;
+  if(date1 <= date2){
+    olderDate = date1; youngerDate = date2; olderLabel = 'الشخص الأول';
+  } else {
+    olderDate = date2; youngerDate = date1; olderLabel = 'الشخص الثاني';
+  }
+
+  const oy = olderDate.getFullYear(), om = olderDate.getMonth()+1, od = olderDate.getDate();
+  const yy = youngerDate.getFullYear(), ym = youngerDate.getMonth()+1, yd = youngerDate.getDate();
+
+  let years = yy - oy, months = ym - om, days = yd - od;
+  if(days < 0){
+    months -= 1;
+    let prevMonth = ym - 1, prevYear = yy;
+    if(prevMonth === 0){ prevMonth = 12; prevYear -= 1; }
+    days += new Date(prevYear, prevMonth, 0).getDate();
+  }
+  if(months < 0){ years -= 1; months += 12; }
+
+  let resultText = '';
+  if(years > 0) resultText += years + ' سنة';
+  if(months > 0) resultText += (resultText ? ' و ' : '') + months + ' شهر';
+  if(days > 0 || resultText === '') resultText += (resultText ? ' و ' : '') + days + ' يوم';
+
+  document.getElementById('diffBig').textContent = resultText;
+  document.getElementById('diffWho').textContent = olderLabel + ' أكبر سناً';
+  document.getElementById('results').style.display = 'block';
+}
+</script>
+</body>
+</html>
