@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://mrzapto.online/mawalid-1998.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مواليد 1998 كم عمرهم في 2026؟ - حاسبة العمر الدقيقة</title>
+<meta name="description" content="مواليد 1998 يكون عمرهم 28 أو 27 عامًا في 2026 حسب تاريخ الميلاد. احسب عمرك الدقيق بالميلادي والهجري الآن مجانًا.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#123C3D; --teal-700:#1D5253; --gold-600:#C9973B; --gold-700:#A97C29;
+    --sand-50:#F2F5F3; --cream:#FFFDF8; --ink-900:#1B1F1E; --ink-600:#55605B; --moon-100:#E7ECEF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Tajawal', sans-serif; background:var(--sand-50); color:var(--ink-900); line-height:1.7;}
+  h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
+  a{color:var(--gold-700);}
+  .wrap{max-width:800px; margin:0 auto; padding:0 20px;}
+  header{background:var(--teal-900); padding:18px 0;}
+  .brand{color:var(--cream); font-size:22px; font-weight:800; text-decoration:none;}
+  .hero{background:var(--teal-900); padding:40px 0 70px;}
+  .hero h1{color:var(--cream); font-size:clamp(22px,3.5vw,32px); font-weight:800; margin-bottom:12px;}
+  .hero p.sub{color:var(--moon-100); font-size:16px;}
+  .calc-card{background:var(--cream); border-radius:14px; padding:26px; margin-top:28px; box-shadow:0 16px 32px rgba(18,60,61,0.25); border-top:4px solid var(--gold-600);}
+  .calc-row{display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end;}
+  .field{flex:1; min-width:140px;}
+  .field label{display:block; font-weight:700; margin-bottom:6px; font-size:14px;}
+  .field select{width:100%; padding:12px; border:2px solid var(--moon-100); border-radius:8px; font-family:'Tajawal',sans-serif; font-size:15px; background:#fff;}
+  .btn-main{background:var(--gold-600); color:var(--teal-900); border:none; padding:13px 28px; border-radius:8px; font-family:'Almarai',sans-serif; font-weight:800; font-size:15px; cursor:pointer;}
+  .btn-main:hover{background:var(--gold-700);}
+  #results{display:none; margin-top:22px;}
+  .result-split{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:480px){.result-split{grid-template-columns:1fr;}}
+  .result-panel{padding:18px; border-radius:10px;}
+  .result-panel.greg{background:linear-gradient(135deg,var(--gold-600),var(--gold-700)); color:var(--teal-900);}
+  .result-panel.hijri{background:var(--teal-700); color:var(--cream);}
+  .result-panel h3{font-size:14px; margin-bottom:8px;}
+  .result-panel .big{font-size:26px; font-weight:800; font-family:'Almarai',sans-serif;}
+  section{padding:50px 0;}
+  .prose{max-width:720px; color:var(--ink-600); font-size:16px;}
+  .prose p{margin-bottom:14px;}
+  .cta-box{background:var(--teal-900); color:var(--cream); border-radius:10px; padding:22px; text-align:center; margin-top:20px;}
+  .cta-box a{color:var(--gold-600); font-weight:800; text-decoration:none;}
+  .related{margin-top:16px; font-size:15px;}
+  footer{background:var(--teal-900); color:var(--moon-100); text-align:center; padding:26px 0; font-size:14px;}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><a href="/" class="brand">حساب العمر</a></div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>مواليد 1998 كم عمرهم في 2026؟</h1>
+    <p class="sub">أدخل يوم وشهر ميلادك بالضبط، واحصل على عمرك الدقيق بالميلادي والهجري.</p>
+
+    <div class="calc-card">
+      <div class="calc-row">
+        <div class="field">
+          <label>اليوم</label>
+          <select id="birthDay"></select>
+        </div>
+        <div class="field">
+          <label>الشهر</label>
+          <select id="birthMonth">
+            <option value="1">يناير</option><option value="2">فبراير</option><option value="3">مارس</option>
+            <option value="4">أبريل</option><option value="5">مايو</option><option value="6">يونيو</option>
+            <option value="7">يوليو</option><option value="8">أغسطس</option><option value="9">سبتمبر</option>
+            <option value="10">أكتوبر</option><option value="11">نوفمبر</option><option value="12">ديسمبر</option>
+          </select>
+        </div>
+        <button class="btn-main" onclick="calcYearAge()">احسب عمري</button>
+      </div>
+      <div id="results">
+        <div class="result-split">
+          <div class="result-panel greg"><h3>عمرك بالميلادي</h3><div class="big" id="gregBig">-</div></div>
+          <div class="result-panel hijri"><h3>عمرك بالهجري</h3><div class="big" id="hijriBig">-</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="prose">
+      <p>إذا كنت من <b>مواليد 1998</b>، فإن عمرك في عام 2026 يكون <b>28 عامًا</b> إذا كان عيد ميلادك قد مرّ بالفعل هذا العام، أو <b>27 عامًا</b> إذا لم يحن موعده بعد.</p>
+      <p>لمعرفة عمرك الدقيق باليوم والشهر، استخدم الحاسبة أعلاه — ستحصل فورًا على عمرك بالتقويمين الميلادي والهجري معًا.</p>
+    </div>
+
+    <div class="cta-box">
+      <p>تريد حساب عمرك بتاريخ ميلاد كامل (يوم وشهر وسنة أخرى)؟</p>
+      <a href="/">استخدم حاسبة العمر الكاملة من هنا ←</a>
+    </div>
+
+    <div class="related">
+      <p>صفحات ذات صلة: <a href="/mawalid-1995.html">مواليد 1995</a> · <a href="/mawalid-1983.html">مواليد 1983</a> · <a href="/mawalid-1984.html">مواليد 1984</a></p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 حساب العمر - جميع الحقوق محفوظة</div></footer>
+
+<script>
+const BIRTH_YEAR = 1998;
+
+const ISLAMIC_EPOCH = 1948439.5, GREGORIAN_EPOCH = 1721425.5;
+function mod(a,b){return a-b*Math.floor(a/b);}
+function isLeapGregorian(y){return (y%4===0)&&!((y%100===0)&&(y%400!==0));}
+function gregorianToJD(y,m,d){
+  return (GREGORIAN_EPOCH-1)+(365*(y-1))+Math.floor((y-1)/4)+(-Math.floor((y-1)/100))+Math.floor((y-1)/400)+
+    Math.floor((((367*m)-362)/12)+(m<=2?0:(isLeapGregorian(y)?-1:-2))+d);
+}
+function isLeapIslamic(y){return mod((y*11)+14,30)<11;}
+function islamicToJD(y,m,d){
+  return d+Math.ceil(29.5*(m-1))+(y-1)*354+Math.floor((3+(11*y))/30)+ISLAMIC_EPOCH-1;
+}
+function jdToIslamic(jd){
+  jd=Math.floor(jd)+0.5;
+  const year=Math.floor(((30*(jd-ISLAMIC_EPOCH))+10646)/10631);
+  const month=Math.min(12,Math.ceil((jd-(29+islamicToJD(year,1,1)))/29.5)+1);
+  const day=Math.round((jd-islamicToJD(year,month,1))+1);
+  return {year,month,day};
+}
+function islamicMonthLength(y,m){ if(m===12&&isLeapIslamic(y))return 30; return (m%2===1)?30:29; }
+
+const daySelect = document.getElementById('birthDay');
+for(let i=1;i<=31;i++){ daySelect.innerHTML += `<option value="${i}">${i}</option>`; }
+
+function calcYearAge(){
+  const bd = parseInt(document.getElementById('birthDay').value);
+  const bm = parseInt(document.getElementById('birthMonth').value);
+  const by = BIRTH_YEAR;
+  const today = new Date();
+  const ry = today.getFullYear(), rm = today.getMonth()+1, rd = today.getDate();
+
+  let gYears = ry-by, gMonths = rm-bm, gDays = rd-bd;
+  if(gDays<0){ gMonths-=1; let pm=rm-1,py=ry; if(pm===0){pm=12;py-=1;} gDays += new Date(py,pm,0).getDate(); }
+  if(gMonths<0){ gYears-=1; gMonths+=12; }
+
+  const birthJD = gregorianToJD(by,bm,bd);
+  const todayJD = gregorianToJD(ry,rm,rd);
+  const hBirth = jdToIslamic(birthJD);
+  const hToday = jdToIslamic(todayJD);
+
+  let hYears = hToday.year-hBirth.year, hMonths = hToday.month-hBirth.month, hDays = hToday.day-hBirth.day;
+  if(hDays<0){ hMonths-=1; let pm=hToday.month-1,py=hToday.year; if(pm===0){pm=12;py-=1;} hDays += islamicMonthLength(py,pm); }
+  if(hMonths<0){ hYears-=1; hMonths+=12; }
+
+  document.getElementById('gregBig').textContent = gYears+' سنة، '+gMonths+' شهر، '+gDays+' يوم';
+  document.getElementById('hijriBig').textContent = hYears+' سنة، '+hMonths+' شهر، '+hDays+' يوم';
+  document.getElementById('results').style.display='block';
+}
+</script>
+</body>
+</html>
