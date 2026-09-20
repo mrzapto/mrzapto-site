@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://mrzapto.online/hisab-al-omor-belmiladi.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حساب العمر بالميلادي - حاسبة دقيقة بالسنوات والأشهر والأيام</title>
+<meta name="description" content="احسب عمرك بالتقويم الميلادي بدقة كاملة: السنوات، الأشهر، الأيام، وحتى الساعات والدقائق. أداة مجانية وسريعة دون تسجيل.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"كيف أحسب عمري بالميلادي بدقة؟","acceptedAnswer":{"@type":"Answer","text":"أدخل تاريخ ميلادك الكامل (اليوم والشهر والسنة) في الحاسبة أعلاه، وستحصل فوراً على عمرك بالسنوات والأشهر والأيام دون أي حساب يدوي."}},
+    {"@type":"Question","name":"هل تراعي الحاسبة السنوات الكبيسة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة وتضبط النتيجة وفقاً لذلك دون أي تدخل منك."}},
+    {"@type":"Question","name":"هل يمكنني معرفة عمري بالهجري أيضاً؟","acceptedAnswer":{"@type":"Answer","text":"نعم، هذه الصفحة مخصصة للعمر بالميلادي فقط، ولمعرفة عمرك بالتقويمين معاً يمكنك استخدام الحاسبة الرئيسية."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --teal-900:#123C3D; --teal-700:#1D5253; --gold-600:#C9973B; --gold-700:#A97C29;
+    --sand-50:#F2F5F3; --cream:#FFFDF8; --ink-900:#1B1F1E; --ink-600:#55605B; --moon-100:#E7ECEF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Tajawal', sans-serif; background:var(--sand-50); color:var(--ink-900); line-height:1.7;}
+  h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
+  a{color:var(--gold-700);}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px;}
+  .prose{max-width:760px; color:var(--ink-600); font-size:16px;}
+  .prose p{margin-bottom:14px;}
+  .prose ul,.prose ol{padding-right:20px; margin-bottom:14px;}
+  .prose li{margin-bottom:8px;}
+
+  header{background:var(--teal-900); padding:18px 0;}
+  .brand{color:var(--cream); font-size:22px; font-weight:800; text-decoration:none;}
+
+  .hero{background:var(--teal-900); padding:50px 0 90px;}
+  .hero h1{color:var(--cream); font-size:clamp(24px,4vw,36px); font-weight:800; max-width:680px; margin-bottom:14px;}
+  .hero p.sub{color:var(--moon-100); max-width:560px; font-size:17px;}
+
+  .calc-card{
+    background:var(--cream); border-radius:14px; padding:30px; margin-top:34px;
+    box-shadow:0 20px 40px rgba(18,60,61,0.25); border-top:4px solid var(--gold-600);
+  }
+  .calc-row{display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end;}
+  .field{flex:1; min-width:220px;}
+  .field label{display:block; font-weight:700; margin-bottom:8px; font-size:15px;}
+  .field input[type=date]{
+    width:100%; padding:13px 14px; border:2px solid var(--moon-100); border-radius:8px;
+    font-family:'Tajawal', sans-serif; font-size:16px; background:#fff;
+  }
+  .field input[type=date]:focus{outline:3px solid var(--gold-600); border-color:var(--gold-600);}
+  .btn-main{
+    background:var(--gold-600); color:var(--teal-900); border:none; padding:14px 34px;
+    border-radius:8px; font-family:'Almarai', sans-serif; font-weight:800; font-size:16px;
+    cursor:pointer; transition:background .2s;
+  }
+  .btn-main:hover{background:var(--gold-700);}
+
+  #results{display:none; margin-top:30px;}
+  .result-main{
+    background:linear-gradient(135deg,var(--gold-600),var(--gold-700)); color:var(--teal-900);
+    padding:26px; border-radius:12px; text-align:center;
+  }
+  .result-main h3{font-size:16px; margin-bottom:10px; font-weight:700;}
+  .result-main .big{font-size:36px; font-weight:800; font-family:'Almarai',sans-serif;}
+  .result-main .small{font-size:15px; opacity:.9; margin-top:6px;}
+
+  .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px;}
+  @media(max-width:560px){.stats-row{grid-template-columns:1fr 1fr;}}
+  .stat-box{background:var(--moon-100); padding:16px 10px; border-radius:8px; text-align:center;}
+  .stat-box .num{font-size:22px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--teal-900);}
+  .stat-box .lbl{font-size:13px; color:var(--ink-600); margin-top:2px;}
+
+  .extra-facts{margin-top:16px; background:var(--sand-50); border-radius:8px; padding:16px 18px; font-size:15px;}
+  .extra-facts div{margin-bottom:6px;}
+  .extra-facts b{color:var(--teal-900);}
+
+  .countdown-box{margin-top:16px; text-align:center; background:var(--teal-900); color:var(--cream); border-radius:8px; padding:18px;}
+  .countdown-box .cd-title{font-size:14px; margin-bottom:10px; color:var(--moon-100);}
+  .cd-numbers{display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
+  .cd-numbers div{text-align:center;}
+  .cd-numbers .cd-val{font-size:24px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--gold-600);}
+  .cd-numbers .cd-lbl{font-size:12px; color:var(--moon-100);}
+
+  section{padding:50px 0;}
+  section h2{font-size:24px; margin-bottom:20px; text-align:center;}
+
+  .steps{display:flex; gap:24px; flex-wrap:wrap; justify-content:center;}
+  .step{flex:1; min-width:220px; text-align:center;}
+  .step .num{
+    width:44px; height:44px; border-radius:50%; background:var(--gold-600); color:var(--teal-900);
+    display:flex; align-items:center; justify-content:center; font-weight:800;
+    font-family:'Almarai',sans-serif; margin:0 auto 14px;
+  }
+
+  .feature-row{display:flex; gap:20px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--moon-100);}
+  .feature-row:last-child{border-bottom:none;}
+  .feature-row .bar{width:5px; align-self:stretch; background:var(--gold-600); border-radius:4px; flex-shrink:0;}
+  .feature-row h3{font-size:17px; margin-bottom:6px;}
+  .feature-row p{color:var(--ink-600); font-size:15px;}
+
+  .faq-item{border-bottom:1px solid var(--moon-100); padding:16px 0;}
+  .faq-item summary{cursor:pointer; font-weight:700; font-size:16px; list-style:none;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::before{content:"+"; color:var(--gold-700); font-weight:800; margin-left:10px;}
+  .faq-item[open] summary::before{content:"−";}
+  .faq-item p{margin-top:10px; color:var(--ink-600);}
+
+  .cta-box{background:var(--teal-900); color:var(--cream); border-radius:10px; padding:22px; text-align:center; margin-top:10px;}
+  .cta-box a{color:var(--gold-600); font-weight:800; text-decoration:none;}
+  .related{margin-top:16px; font-size:15px; text-align:center;}
+
+  footer{background:var(--teal-900); color:var(--moon-100); text-align:center; padding:26px 0; font-size:14px;}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><a href="/" class="brand">حساب العمر</a></div></header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>حساب العمر بالميلادي بدقة كاملة</h1>
+    <p class="sub">أدخل تاريخ ميلادك بالتقويم الميلادي، واحصل فوراً على عمرك بالسنوات والأشهر والأيام.</p>
+
+    <div class="calc-card">
+      <div class="calc-row">
+        <div class="field">
+          <label for="birthdate">تاريخ الميلاد</label>
+          <input type="date" id="birthdate">
+        </div>
+        <button class="btn-main" onclick="calculateAge()">احسب عمري</button>
+      </div>
+
+      <div id="results">
+        <div class="result-main">
+          <h3>عمرك بالتقويم الميلادي</h3>
+          <div class="big" id="ageBig">-</div>
+          <div class="small" id="ageSmall">-</div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box"><div class="num" id="statDays">0</div><div class="lbl">إجمالي الأيام</div></div>
+          <div class="stat-box"><div class="num" id="statWeeks">0</div><div class="lbl">إجمالي الأسابيع</div></div>
+          <div class="stat-box"><div class="num" id="statHours">0</div><div class="lbl">إجمالي الساعات</div></div>
+          <div class="stat-box"><div class="num" id="statMinutes">0</div><div class="lbl">إجمالي الدقائق</div></div>
+        </div>
+
+        <div class="extra-facts">
+          <div><b>يوم ميلادك:</b> <span id="factDay">-</span></div>
+          <div><b>فصل ميلادك:</b> <span id="factSeason">-</span></div>
+        </div>
+
+        <div class="countdown-box">
+          <div class="cd-title">الوقت المتبقي لعيد ميلادك القادم</div>
+          <div class="cd-numbers">
+            <div><div class="cd-val" id="cdDays">0</div><div class="cd-lbl">يوم</div></div>
+            <div><div class="cd-val" id="cdHours">0</div><div class="cd-lbl">ساعة</div></div>
+            <div><div class="cd-val" id="cdMinutes">0</div><div class="cd-lbl">دقيقة</div></div>
+            <div><div class="cd-val" id="cdSeconds">0</div><div class="cd-lbl">ثانية</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- YAHAN SE ARTICLE CONTENT AAYEGA (placeholder abhi) -->
+<!-- ================================================ -->
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>كيف تستخدم حاسبة العمر بالميلادي؟</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>أدخل تاريخ ميلادك</h3><p>حدد يوم وشهر وسنة ميلادك بالتقويم الميلادي.</p></div>
+      <div class="step"><div class="num">2</div><h3>اضغط احسب عمري</h3><p>النتيجة تظهر فوراً دون إعادة تحميل الصفحة.</p></div>
+      <div class="step"><div class="num">3</div><h3>شاهد التفاصيل الكاملة</h3><p>عمرك بالسنوات والأشهر والأيام، مع تفاصيل إضافية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>مميزات الحاسبة</h2>
+    <div class="feature-row"><div class="bar"></div><div><h3>دقة كاملة مع السنوات الكبيسة</h3><p>الحاسبة تكتشف تلقائياً السنوات الكبيسة وتضبط النتيجة وفقاً لذلك.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>تفاصيل تتجاوز السنوات</h3><p>إجمالي الأيام والأسابيع والساعات والدقائق، لتفصيل أدق من مجرد "كم عمرك بالسنة".</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>عد تنازلي لعيد الميلاد القادم</h3><p>تعرف بالضبط كم يفصلك عن عيد ميلادك القادم، محدّث لحظة بلحظة.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>مجانية بالكامل وبلا تسجيل</h3><p>استخدمها عدد المرات الذي تريده دون أي رسوم.</p></div></div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>الأسئلة الشائعة</h2>
+    <details class="faq-item" open>
+      <summary>كيف أحسب عمري بالميلادي بدقة؟</summary>
+      <p>أدخل تاريخ ميلادك الكامل في الحاسبة أعلاه، وستحصل فوراً على عمرك بالسنوات والأشهر والأيام.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل تراعي الحاسبة السنوات الكبيسة؟</summary>
+      <p>نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة وتضبط النتيجة وفقاً لذلك.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل يمكنني معرفة عمري بالهجري أيضاً؟</summary>
+      <p>نعم، هذه الصفحة مخصصة للعمر بالميلادي فقط، ولمعرفة عمرك بالتقويمين معاً استخدم الحاسبة الرئيسية.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-box">
+      <p>تريد معرفة عمرك بالهجري والميلادي معاً؟</p>
+      <a href="/">استخدم الحاسبة الرئيسية من هنا ←</a>
+    </div>
+    <div class="related">
+      <p>صفحات ذات صلة: <a href="/mawalid-1995.html">مواليد 1995</a> · <a href="/mawalid-1990.html">مواليد 1990</a></p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 حساب العمر - جميع الحقوق محفوظة</div></footer>
+
+<script>
+const dayNames = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+
+function getSeason(month){
+  if ([12,1,2].includes(month)) return "الشتاء";
+  if ([3,4,5].includes(month)) return "الربيع";
+  if ([6,7,8].includes(month)) return "الصيف";
+  return "الخريف";
+}
+
+let countdownInterval = null;
+
+function calculateAge(){
+  const input = document.getElementById('birthdate').value;
+  if(!input){ alert('الرجاء إدخال تاريخ الميلاد'); return; }
+
+  const birthDate = new Date(input + 'T00:00:00');
+  const today = new Date();
+
+  const bm = birthDate.getMonth()+1, bd = birthDate.getDate();
+  const ry = today.getFullYear(), rm = today.getMonth()+1, rd = today.getDate();
+  const by = birthDate.getFullYear();
+
+  let years = ry - by, months = rm - bm, days = rd - bd;
+  if (days < 0){
+    months -= 1;
+    let prevMonth = rm - 1, prevYear = ry;
+    if (prevMonth === 0){ prevMonth = 12; prevYear -= 1; }
+    days += new Date(prevYear, prevMonth, 0).getDate();
+  }
+  if (months < 0){ years -= 1; months += 12; }
+
+  const diffMs = today - birthDate;
+  const totalDays = Math.floor(diffMs / 86400000);
+  const totalWeeks = Math.floor(totalDays / 7);
+  const totalHours = Math.floor(diffMs / 3600000);
+  const totalMinutes = Math.floor(diffMs / 60000);
+
+  document.getElementById('ageBig').textContent = years + ' سنة';
+  document.getElementById('ageSmall').textContent = months + ' شهر و ' + days + ' يوم';
+
+  animateCount('statDays', totalDays);
+  animateCount('statWeeks', totalWeeks);
+  animateCount('statHours', totalHours);
+  animateCount('statMinutes', totalMinutes);
+
+  document.getElementById('factDay').textContent = dayNames[birthDate.getDay()];
+  document.getElementById('factSeason').textContent = getSeason(bm);
+
+  document.getElementById('results').style.display = 'block';
+  startCountdown(bm, bd);
+}
+
+function animateCount(elId, target){
+  const el = document.getElementById(elId);
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now){
+    const progress = Math.min((now - startTime) / duration, 1);
+    el.textContent = Math.floor(progress * target).toLocaleString('ar');
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function startCountdown(bm, bd){
+  if (countdownInterval) clearInterval(countdownInterval);
+  function tick(){
+    const now = new Date();
+    let nextBday = new Date(now.getFullYear(), bm-1, bd);
+    if (nextBday < now) nextBday = new Date(now.getFullYear()+1, bm-1, bd);
+    const diff = nextBday - now;
+    document.getElementById('cdDays').textContent = Math.floor(diff / 86400000);
+    document.getElementById('cdHours').textContent = Math.floor((diff % 86400000) / 3600000);
+    document.getElementById('cdMinutes').textContent = Math.floor((diff % 3600000) / 60000);
+    document.getElementById('cdSeconds').textContent = Math.floor((diff % 60000) / 1000);
+  }
+  tick();
+  countdownInterval = setInterval(tick, 1000);
+}
+</script>
+</body>
+</html>
