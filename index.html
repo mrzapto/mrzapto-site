@@ -2,10 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-  <link rel="canonical" href="https://mrzapto.online/">
+<link rel="canonical" href="https://mrzapto.online/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>حساب العمر بالهجري والميلادي - حاسبة العمر مجانية ودقيقة</title>
-<meta name="description" content="احسب عمرك بدقة بالتقويمين الهجري والميلادي في ثوانٍ. حاسبة العمر لدينا مجانية بالكامل وتعرض النتيجة بالسنوات والأشهر والأيام فوراً دون إعادة تحميل الصفحة.">
+<meta name="description" content="احسب عمرك بدقة بالتقويمين الهجري والميلادي مجانًا. أداة سريعة تدعم السنوات الكبيسة والعد التنازلي لعيد الميلاد، دون تسجيل.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -14,10 +14,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"ماذا لو لم أكن أعرف وقت ميلادي بالضبط؟","acceptedAnswer":{"@type":"Answer","text":"لا مشكلة، الحاسبة تعمل بشكل كامل بمجرد إدخال تاريخ الميلاد فقط دون الحاجة إلى الوقت الدقيق."}},
+    {"@type":"Question","name":"ماذا لو لم أكن أعرف وقت ميلادي بالضبط؟","acceptedAnswer":{"@type":"Answer","text":"لا مشكلة، الحساب الأساسي للعمر بالسنوات والأشهر والأيام يعتمد فقط على تاريخ الميلاد، لا وقته."}},
     {"@type":"Question","name":"هل يمكنني حساب عمر شخص آخر؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكنك إدخال أي تاريخ ميلاد للتحقق من عمر أي شخص، سواء كان فرداً من العائلة أو صديقاً."}},
     {"@type":"Question","name":"ما الفرق بين التقويم الهجري والميلادي؟","acceptedAnswer":{"@type":"Answer","text":"التقويم الميلادي شمسي ويحتوي على 365 أو 366 يوماً، بينما التقويم الهجري قمري ويحتوي على 354 أو 355 يوماً، ولهذا يختلف العمر بينهما بشكل ملحوظ."}},
-    {"@type":"Question","name":"لماذا عمري بالهجري أكبر من عمري بالميلادي؟","acceptedAnswer":{"@type":"Answer","text":"لأن السنة الهجرية أقصر من السنة الميلادية بحوالي 11 يوماً، فمع مرور الزمن يصبح عدد السنوات الهجرية المنقضية أكبر من عدد السنوات الميلادية."}}
+    {"@type":"Question","name":"لماذا عمري بالهجري أكبر من عمري بالميلادي؟","acceptedAnswer":{"@type":"Answer","text":"لأن السنة الهجرية أقصر من السنة الميلادية بحوالي 11 يوماً، فمع مرور الزمن يصبح عدد السنوات الهجرية المنقضية أكبر من عدد السنوات الميلادية."}},
+    {"@type":"Question","name":"هل تراعي الحاسبة السنوات الكبيسة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة في كل من التقويمين الميلادي والهجري، لذلك تحصل دائماً على نتيجة دقيقة دون أي أخطاء."}},
+    {"@type":"Question","name":"هل يمكن استخدام الحاسبة في جميع الدول العربية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، تعمل الحاسبة بشكل مثالي لجميع المستخدمين الناطقين بالعربية، سواء في السعودية أو مصر أو العراق أو أي دولة عربية أخرى."}}
   ]
 }
 </script>
@@ -44,167 +46,84 @@
   h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
   a{color:inherit;}
   .wrap{max-width:1000px; margin:0 auto; padding:0 20px;}
+  .prose{max-width:760px; margin:0 auto; color:var(--ink-600); font-size:16px;}
+  .prose p{margin-bottom:14px;}
+  .prose ul{padding-right:20px; margin-bottom:14px;}
+  .prose li{margin-bottom:8px;}
+  .prose h3{color:var(--ink-900); font-size:18px; margin:22px 0 8px;}
 
-  /* ===== Header ===== */
-  header{
-    background:var(--teal-900);
-    padding:18px 0;
-  }
+  header{background:var(--teal-900); padding:18px 0;}
   .brand{color:var(--cream); font-size:22px; font-weight:800;}
 
-  /* ===== Hero ===== */
-  .hero{
-    background:var(--teal-900);
-    padding:50px 0 90px;
-    position:relative;
-  }
-  .hero h1{
-    color:var(--cream);
-    font-size:clamp(26px,4vw,40px);
-    font-weight:800;
-    max-width:680px;
-    margin-bottom:14px;
-  }
-  .hero p.sub{
-    color:var(--moon-100);
-    max-width:560px;
-    font-size:17px;
-  }
+  .hero{background:var(--teal-900); padding:50px 0 90px; position:relative;}
+  .hero h1{color:var(--cream); font-size:clamp(26px,4vw,40px); font-weight:800; max-width:680px; margin-bottom:14px;}
+  .hero p.sub{color:var(--moon-100); max-width:560px; font-size:17px;}
 
-  /* ===== Calculator Card ===== */
   .calc-card{
-    background:var(--cream);
-    border-radius:14px;
-    padding:30px;
-    margin-top:34px;
-    box-shadow:0 20px 40px rgba(18,60,61,0.25);
-    border-top:4px solid var(--gold-600);
+    background:var(--cream); border-radius:14px; padding:30px; margin-top:34px;
+    box-shadow:0 20px 40px rgba(18,60,61,0.25); border-top:4px solid var(--gold-600);
   }
-  .calc-row{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    align-items:flex-end;
-  }
+  .calc-row{display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end;}
   .field{flex:1; min-width:220px;}
-  .field label{
-    display:block;
-    font-weight:700;
-    margin-bottom:8px;
-    font-size:15px;
-  }
+  .field label{display:block; font-weight:700; margin-bottom:8px; font-size:15px;}
   .field input[type=date]{
-    width:100%;
-    padding:13px 14px;
-    border:2px solid var(--moon-100);
-    border-radius:8px;
-    font-family:'Tajawal', sans-serif;
-    font-size:16px;
-    background:#fff;
+    width:100%; padding:13px 14px; border:2px solid var(--moon-100); border-radius:8px;
+    font-family:'Tajawal', sans-serif; font-size:16px; background:#fff;
   }
   .field input[type=date]:focus{outline:3px solid var(--gold-600); border-color:var(--gold-600);}
   .btn-main{
-    background:var(--gold-600);
-    color:var(--teal-900);
-    border:none;
-    padding:14px 34px;
-    border-radius:8px;
-    font-family:'Almarai', sans-serif;
-    font-weight:800;
-    font-size:16px;
-    cursor:pointer;
-    transition:background .2s;
+    background:var(--gold-600); color:var(--teal-900); border:none; padding:14px 34px;
+    border-radius:8px; font-family:'Almarai', sans-serif; font-weight:800; font-size:16px;
+    cursor:pointer; transition:background .2s;
   }
   .btn-main:hover{background:var(--gold-700);}
   .btn-main:focus-visible{outline:3px solid var(--teal-700); outline-offset:2px;}
 
-  /* ===== Results ===== */
   #results{display:none; margin-top:30px;}
-  .result-split{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
+  .result-split{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   @media(max-width:560px){.result-split{grid-template-columns:1fr;}}
-  .result-panel{
-    padding:22px;
-    border-radius:10px;
-  }
+  .result-panel{padding:22px; border-radius:10px;}
   .result-panel.greg{background:linear-gradient(135deg,var(--gold-600),var(--gold-700)); color:var(--teal-900);}
   .result-panel.hijri{background:var(--teal-700); color:var(--cream);}
   .result-panel h3{font-size:15px; margin-bottom:10px; font-weight:700;}
   .result-panel .big{font-size:30px; font-weight:800; font-family:'Almarai',sans-serif;}
   .result-panel .small{font-size:14px; opacity:.9; margin-top:4px;}
 
-  .stats-row{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-    margin-top:16px;
-  }
+  .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px;}
   @media(max-width:560px){.stats-row{grid-template-columns:1fr 1fr;}}
-  .stat-box{
-    background:var(--moon-100);
-    padding:16px 10px;
-    border-radius:8px;
-    text-align:center;
-  }
+  .stat-box{background:var(--moon-100); padding:16px 10px; border-radius:8px; text-align:center;}
   .stat-box .num{font-size:22px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--teal-900);}
   .stat-box .lbl{font-size:13px; color:var(--ink-600); margin-top:2px;}
 
-  .extra-facts{
-    margin-top:16px;
-    background:var(--sand-50);
-    border-radius:8px;
-    padding:16px 18px;
-    font-size:15px;
-  }
+  .extra-facts{margin-top:16px; background:var(--sand-50); border-radius:8px; padding:16px 18px; font-size:15px;}
   .extra-facts div{margin-bottom:6px;}
   .extra-facts b{color:var(--teal-900);}
 
-  .countdown-box{
-    margin-top:16px;
-    text-align:center;
-    background:var(--teal-900);
-    color:var(--cream);
-    border-radius:8px;
-    padding:18px;
-  }
+  .countdown-box{margin-top:16px; text-align:center; background:var(--teal-900); color:var(--cream); border-radius:8px; padding:18px;}
   .countdown-box .cd-title{font-size:14px; margin-bottom:10px; color:var(--moon-100);}
   .cd-numbers{display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
   .cd-numbers div{text-align:center;}
   .cd-numbers .cd-val{font-size:24px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--gold-600);}
   .cd-numbers .cd-lbl{font-size:12px; color:var(--moon-100);}
 
-  /* ===== Sections ===== */
   section{padding:60px 0;}
-  section h2{font-size:26px; margin-bottom:30px; text-align:center;}
+  section h2{font-size:26px; margin-bottom:24px; text-align:center;}
 
   .steps{display:flex; gap:24px; flex-wrap:wrap; justify-content:center;}
   .step{flex:1; min-width:220px; text-align:center;}
   .step .num{
-    width:44px; height:44px; border-radius:50%;
-    background:var(--gold-600); color:var(--teal-900);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-family:'Almarai',sans-serif;
-    margin:0 auto 14px;
+    width:44px; height:44px; border-radius:50%; background:var(--gold-600); color:var(--teal-900);
+    display:flex; align-items:center; justify-content:center; font-weight:800;
+    font-family:'Almarai',sans-serif; margin:0 auto 14px;
   }
 
-  .feature-row{
-    display:flex; gap:20px; align-items:flex-start;
-    padding:18px 0; border-bottom:1px solid var(--moon-100);
-  }
+  .feature-row{display:flex; gap:20px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--moon-100);}
   .feature-row:last-child{border-bottom:none;}
-  .feature-row .bar{
-    width:5px; align-self:stretch; background:var(--gold-600); border-radius:4px; flex-shrink:0;
-  }
+  .feature-row .bar{width:5px; align-self:stretch; background:var(--gold-600); border-radius:4px; flex-shrink:0;}
   .feature-row h3{font-size:17px; margin-bottom:6px;}
   .feature-row p{color:var(--ink-600); font-size:15px;}
 
-  .compare{
-    display:grid; grid-template-columns:1fr 1fr; gap:0;
-    border-radius:12px; overflow:hidden;
-  }
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:12px; overflow:hidden;}
   @media(max-width:560px){.compare{grid-template-columns:1fr;}}
   .compare > div{padding:26px;}
   .compare .sun{background:var(--gold-600); color:var(--teal-900);}
@@ -212,23 +131,20 @@
   .compare h3{margin-bottom:12px; font-size:18px;}
   .compare ul{padding-right:20px; font-size:15px; line-height:1.9;}
 
-  .faq-item{
-    border-bottom:1px solid var(--moon-100);
-    padding:16px 0;
+  .example-card{
+    background:var(--cream); border-right:4px solid var(--gold-600); border-radius:8px;
+    padding:18px 20px; margin-bottom:14px;
   }
-  .faq-item summary{
-    cursor:pointer; font-weight:700; font-size:16px;
-    list-style:none;
-  }
+  .example-card b{color:var(--teal-900);}
+
+  .faq-item{border-bottom:1px solid var(--moon-100); padding:16px 0;}
+  .faq-item summary{cursor:pointer; font-weight:700; font-size:16px; list-style:none;}
   .faq-item summary::-webkit-details-marker{display:none;}
   .faq-item summary::before{content:"+"; color:var(--gold-700); font-weight:800; margin-left:10px;}
   .faq-item[open] summary::before{content:"−";}
   .faq-item p{margin-top:10px; color:var(--ink-600);}
 
-  footer{
-    background:var(--teal-900); color:var(--moon-100);
-    text-align:center; padding:26px 0; font-size:14px;
-  }
+  footer{background:var(--teal-900); color:var(--moon-100); text-align:center; padding:26px 0; font-size:14px;}
 </style>
 </head>
 <body>
@@ -239,9 +155,9 @@
 
 <div class="hero">
   <div class="wrap">
-<h1>احسب عمرك بالتقويمين معاً في ثانية واحدة</h1>
-<p class="sub">أدخل تاريخ ميلاد واحد، واحصل فوراً على عمرك بالتقويم الميلادي والهجري في نفس الصفحة.</p>
-    
+    <h1>احسب عمرك بالتقويمين معاً في ثانية واحدة</h1>
+    <p class="sub">أدخل تاريخ ميلاد واحد، واحصل فوراً على عمرك بالتقويم الميلادي والهجري في نفس الصفحة.</p>
+
     <div class="calc-card">
       <div class="calc-row">
         <div class="field">
@@ -292,17 +208,13 @@
   </div>
 </div>
 
-  <!-- YEH SECTION "hero" div KE FORAN BAAD, "كيف تستخدم" section SE PEHLE PASTE KARO -->
-
 <section style="background:var(--cream);">
   <div class="wrap">
-    <h2>ما هي حاسبة العمر ولماذا تحتاجها؟</h2>
-    <p style="max-width:760px; margin:0 auto 16px; color:var(--ink-600); font-size:16px;">
-      حاسبة العمر أداة مجانية تتيح لك احسب عمرك بدقة تامة من خلال طرح تاريخ ميلادك من تاريخ اليوم. توفر الأداة نتائج شاملة بالسنوات والأشهر والأيام، وتأخذ في الاعتبار السنوات الكبيسة تلقائياً دون أي حاجة لحسابات يدوية معقدة.
-    </p>
-    <p style="max-width:760px; margin:0 auto; color:var(--ink-600); font-size:16px;">
-      تعمل الحاسبة بشكل مثالي مع كل من التقويم الميلادي والتقويم الهجري، مما يجعلها الخيار الأنسب لمستخدمي المملكة العربية السعودية ودول الخليج العربي، حيث لا يزال التقويم الهجري مستخدماً في العديد من المعاملات الرسمية والمناسبات الدينية إلى جانب التقويم الميلادي المعتمد رسمياً في المعاملات الحكومية.
-    </p>
+    <h2>دليلك الكامل لمعرفة عمرك بدقة</h2>
+    <div class="prose">
+      <p>كم عمري بالضبط؟ سؤال يبدو بسيطًا، لكن الإجابة عليه في المملكة العربية السعودية ليست دائمًا واضحة. فبين التقويم الميلادي الذي يعتمده أغلب العالم، والتقويم الهجري الذي ما زال حاضرًا في الأوراق الرسمية والمناسبات الدينية، كثيرون يجدون أنفسهم بحاجة لمعرفة عمرهم بكلا التقويمين في آن واحد.</p>
+      <p>حساب العمر يدويًا هنا يصبح مرهقًا، خصوصًا مع السنوات الكبيسة واختلاف أطوال الأشهر بين التقويمين. هذا الدليل يشرح كيف تحسب عمرك بدقة بالميلادي والهجري، ولماذا يهم الأمر لمن يعيش في السعودية أو المناطق التي تستخدم التقويم الهجري القمري، وكيف تتعامل حاسبة العمر مع كل هذه التفاصيل نيابة عنك.</p>
+    </div>
   </div>
 </section>
 
@@ -310,20 +222,48 @@
   <div class="wrap">
     <h2>كيف تستخدم حاسبة العمر؟</h2>
     <div class="steps">
-      <div class="step"><div class="num">1</div><h3>أدخل تاريخ ميلادك</h3><p>حدد يوم وشهر وسنة ميلادك بالتقويم الميلادي.</p></div>
-      <div class="step"><div class="num">2</div><h3>اضغط احسب عمري</h3><p>ستظهر النتيجة فوراً دون إعادة تحميل الصفحة.</p></div>
-      <div class="step"><div class="num">3</div><h3>شاهد النتيجة الكاملة</h3><p>عمرك بالتقويمين، مع تفاصيل إضافية دقيقة.</p></div>
+      <div class="step"><div class="num">1</div><h3>أدخل تاريخ ميلادك</h3><p>حدد يوم وشهر وسنة ميلادك بالتقويم الميلادي، بالضبط كما هو في هويتك.</p></div>
+      <div class="step"><div class="num">2</div><h3>اضغط احسب عمري</h3><p>بمجرد الضغط على الزر، تظهر النتيجة مباشرة دون انتظار وبدون إعادة تحميل الصفحة.</p></div>
+      <div class="step"><div class="num">3</div><h3>شاهد النتيجة الكاملة</h3><p>عمرك بالتقويمين، مع تفاصيل إضافية دقيقة تصل حتى الدقائق.</p></div>
     </div>
   </div>
 </section>
 
 <section style="background:var(--cream);">
   <div class="wrap">
-    <h2>لماذا حاسبة العمر لدينا؟</h2>
-    <div class="feature-row"><div class="bar"></div><div><h3>بدون إعادة تحميل الصفحة</h3><p>النتيجة تظهر فوراً أثناء بقائك في نفس المكان، تجربة أسرع من المواقع الأخرى.</p></div></div>
-    <div class="feature-row"><div class="bar"></div><div><h3>التقويمان معاً في نتيجة واحدة</h3><p>لا حاجة لزيارة صفحتين منفصلتين، تحصل على عمرك بالميلادي والهجري في آن واحد.</p></div></div>
-    <div class="feature-row"><div class="bar"></div><div><h3>دقة كاملة مع مراعاة السنوات الكبيسة</h3><p>الحاسبة تأخذ في الاعتبار السنوات الكبيسة في كلا التقويمين تلقائياً.</p></div></div>
-    <div class="feature-row"><div class="bar"></div><div><h3>مجانية بالكامل بدون تسجيل</h3><p>استخدم الحاسبة عدد المرات الذي تريده دون أي رسوم أو إنشاء حساب.</p></div></div>
+    <h2>لماذا حساب العمر يدويًا يوقعك في الخطأ</h2>
+    <div class="prose">
+      <p>المشكلة ليست في الطرح البسيط بين تاريخين، بل في التفاصيل التي يسهل نسيانها:</p>
+      <ul>
+        <li><b>السنوات الكبيسة</b> تضيف يومًا كل أربع سنوات تقريبًا، وتجاهلها يعني نتيجة أقل دقة بيوم أو أكثر.</li>
+        <li><b>أطوال الأشهر تختلف</b>، فبعضها 28 يومًا وبعضها 31، وهذا يعقّد الحساب اليدوي بالأيام والأشهر.</li>
+        <li><b>التحويل بين الهجري والميلادي</b> ليس عملية طرح بسيطة، لأن التقويمين يسيران بسرعتين مختلفتين تمامًا.</li>
+      </ul>
+      <p>حاسبة العمر تأخذ كل هذه العوامل في الحسبان تلقائيًا، فتعطيك النتيجة بالسنوات والأشهر والأيام، بل وحتى الساعات والدقائق، دون أي حساب يدوي من جانبك.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>أبرز ما تقدمه حاسبة العمر</h2>
+    <div class="feature-row"><div class="bar"></div><div><h3>دعم كامل للتقويمين معًا</h3><p>أدخل تاريخ ميلادك بالميلادي، وستحصل على النتيجة بكليهما دفعة واحدة: عمرك الحالي بالميلادي، وتاريخ ميلادك المقابل وعمرك بالهجري.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>دقة تلقائية في التعامل مع السنوات الكبيسة</h3><p>بدل أن تتذكر أي سنة كانت كبيسة، تكتشف الحاسبة ذلك تلقائيًا وتضبط النتيجة وفقًا لذلك.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>متتبع للعد التنازلي لعيد الميلاد القادم</h3><p>تعرف بالضبط كم يومًا وساعة ودقيقة وثانية تفصلك عن عيد ميلادك القادم، محدّثًا لحظة بلحظة.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>تحليل مفصل يتجاوز السنوات</h3><p>النتيجة تمتد إلى إجمالي الأسابيع والأيام والساعات والدقائق، لمن يريد تفصيلًا أدق من مجرد "كم عمرك بالسنة".</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>تفاصيل إضافية عن يوم ميلادك</h3><p>تعرف يوم الأسبوع الذي وُلدت فيه، وفصل ميلادك (شتاء، ربيع، صيف، خريف).</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>مجانية بالكامل وبلا تسجيل</h3><p>لا حاجة لإنشاء حساب أو دفع أي رسوم. استخدمها عدد المرات الذي تريده لنفسك ولعائلتك.</p></div></div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>حساب العمر في المملكة العربية السعودية: لماذا يهم التقويمان</h2>
+    <div class="prose">
+      <p>في أواخر عام 2023، اتجهت المملكة العربية السعودية نحو اعتماد التقويم الميلادي أساسًا في المعاملات الرسمية الحكومية، مع الإبقاء على التقويم الهجري في الحالات المرتبطة بأحكام الشريعة الإسلامية أو حين يُنص صراحة على استخدامه.</p>
+      <p>عمليًا، هذا يعني أن العمر الهجري لا يزال مطلوبًا في عدد من السياقات الرسمية: من ذلك المستندات المرتبطة بالإقامة والتأشيرات، وبعض العقود القانونية، وبالطبع المناسبات الإسلامية كرمضان والحج التي تُحسب دائمًا بالتقويم القمري.</p>
+      <p>نقطة مهمة يجهلها كثيرون: عمرك يبدو أصغر بالتقويم الهجري مقارنة بالميلادي، بفارق يتراوح بين 10 و12 سنة تقريبًا كلما تقدمت في العمر. السبب بسيط — السنة الهجرية أقصر من الميلادية بنحو 11 يومًا، وهذا الفارق يتراكم عبر العقود. لهذا، معرفة عمرك بكلا التقويمين ليست رفاهية، بل ضرورة عملية.</p>
+    </div>
   </div>
 </section>
 
@@ -334,17 +274,17 @@
       <div class="sun">
         <h3>التقويم الميلادي</h3>
         <ul>
-          <li>يعتمد على دورة الشمس</li>
-          <li>365 أو 366 يوماً في السنة</li>
-          <li>مستخدم رسمياً في المعاملات الحكومية</li>
+          <li>يتبع دورة الشمس</li>
+          <li>365 أو 366 يومًا في السنة</li>
+          <li>يحافظ على ثبات الفصول في نفس التوقيت كل عام</li>
         </ul>
       </div>
       <div class="moon">
         <h3>التقويم الهجري</h3>
         <ul>
-          <li>يعتمد على دورة القمر</li>
-          <li>354 أو 355 يوماً في السنة</li>
-          <li>مستخدم في المناسبات الإسلامية والوثائق الدينية</li>
+          <li>يتبع دورة القمر</li>
+          <li>354 أو 355 يومًا في السنة</li>
+          <li>يبدأ مع رؤية الهلال الجديد، ويجعل المناسبات "تتحرك" عبر الفصول</li>
         </ul>
       </div>
     </div>
@@ -353,10 +293,19 @@
 
 <section style="background:var(--cream);">
   <div class="wrap">
+    <h2>أمثلة عملية على طريقة عمل الحاسبة</h2>
+    <div class="example-card"><b>إدخال عادي:</b> شخص وُلد في 1 يناير 2000. النتيجة تعرض عمره الميلادي، مع تاريخ الميلاد الهجري المقابل وعمره بالهجري — مفيد لمن يريد رؤية الرقمين بسرعة دون أي حسابات إضافية.</div>
+    <div class="example-card"><b>دقة السنة الكبيسة:</b> شخص وُلد في 29 فبراير (سنة كبيسة). الحاسبة تحسب عمره بدقة كاملة مع احتساب أيام السنوات الكبيسة التي مرت خلال حياته، وتعرض المقابل الهجري الدقيق أيضًا.</div>
+    <div class="example-card"><b>عد تنازلي لعيد الميلاد:</b> بمجرد إدخال تاريخ الميلاد، تعرض الحاسبة مباشرة كم يومًا وساعة ودقيقة وثانية تفصلك عن عيد ميلادك القادم، بشكل محدّث كل ثانية.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>الأسئلة الشائعة</h2>
     <details class="faq-item" open>
       <summary>ماذا لو لم أكن أعرف وقت ميلادي بالضبط؟</summary>
-      <p>لا مشكلة، الحاسبة تعمل بشكل كامل بمجرد إدخال تاريخ الميلاد فقط دون الحاجة إلى الوقت الدقيق.</p>
+      <p>لا مشكلة، الحساب الأساسي للعمر بالسنوات والأشهر والأيام يعتمد فقط على تاريخ الميلاد، لا وقته.</p>
     </details>
     <details class="faq-item">
       <summary>هل يمكنني حساب عمر شخص آخر؟</summary>
@@ -370,42 +319,39 @@
       <summary>لماذا عمري بالهجري أكبر من عمري بالميلادي؟</summary>
       <p>لأن السنة الهجرية أقصر من السنة الميلادية بحوالي 11 يوماً، فمع مرور الزمن يصبح عدد السنوات الهجرية المنقضية أكبر من عدد السنوات الميلادية.</p>
     </details>
-    <!-- YEH EXTRA FAQ ITEMS purane FAQ section ke andar, purane 4 sawaalon ke SAATH add karo (closing </details> ke baad, </div> se pehle) -->
-
-<details class="faq-item">
-  <summary>كيف أعرف عمري إذا كنت من مواليد سنة معينة؟</summary>
-  <p>يكفي إدخال تاريخ ميلادك الكامل (اليوم والشهر والسنة) في الحاسبة أعلاه، وستحصل فوراً على عمرك الدقيق محسوباً حتى تاريخ اليوم.</p>
-</details>
-<details class="faq-item">
-  <summary>هل تراعي الحاسبة السنوات الكبيسة؟</summary>
-  <p>نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة في كل من التقويمين الميلادي والهجري، لذلك تحصل دائماً على نتيجة دقيقة دون أي أخطاء.</p>
-</details>
-<details class="faq-item">
-  <summary>هل يمكن استخدام الحاسبة في جميع الدول العربية؟</summary>
-  <p>نعم، تعمل الحاسبة بشكل مثالي لجميع المستخدمين الناطقين بالعربية، سواء في السعودية أو مصر أو العراق أو أي دولة عربية أخرى.</p>
-</details>
-<details class="faq-item">
-  <summary>كيف يتم تحويل التاريخ من الميلادي إلى الهجري؟</summary>
-  <p>تقوم الحاسبة بتحويل تاريخ ميلادك تلقائياً من التقويم الميلادي إلى ما يقابله بالتقويم الهجري باستخدام حساب فلكي دقيق، وتعرض لك النتيجتين معاً دون أي جهد إضافي منك.</p>
-</details>
+    <details class="faq-item">
+      <summary>كيف أعرف عمري إذا كنت من مواليد سنة معينة؟</summary>
+      <p>يكفي إدخال تاريخ ميلادك الكامل في الحاسبة أعلاه، وستحصل فوراً على عمرك الدقيق محسوباً حتى تاريخ اليوم.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل تراعي الحاسبة السنوات الكبيسة؟</summary>
+      <p>نعم، تكتشف الحاسبة تلقائياً السنوات الكبيسة في كل من التقويمين الميلادي والهجري، لذلك تحصل دائماً على نتيجة دقيقة دون أي أخطاء.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل يمكن استخدام الحاسبة في جميع الدول العربية؟</summary>
+      <p>نعم، تعمل الحاسبة بشكل مثالي لجميع المستخدمين الناطقين بالعربية، سواء في السعودية أو مصر أو العراق أو أي دولة عربية أخرى.</p>
+    </details>
+    <details class="faq-item">
+      <summary>كيف يتم تحويل التاريخ من الميلادي إلى الهجري؟</summary>
+      <p>تقوم الحاسبة بتحويل تاريخ ميلادك تلقائياً من التقويم الميلادي إلى ما يقابله بالتقويم الهجري باستخدام حساب فلكي دقيق، وتعرض لك النتيجتين معاً دون أي جهد إضافي منك.</p>
+    </details>
   </div>
 </section>
-<!-- YEH FAQ section KE BAAD, footer SE PEHLE add karo -->
 
-<section>
+<section style="background:var(--cream);">
   <div class="wrap">
     <h2>الخلاصة</h2>
-    <p style="max-width:760px; margin:0 auto; color:var(--ink-600); font-size:16px; text-align:center;">
-      توفر حاسبة العمر لدينا كل ما تحتاجه لمعرفة عمرك بدقة باستخدام التقويمين الميلادي والهجري في وقت واحد. سواء كنت تحتاج عمرك للمستندات الرسمية أو لمعرفة معلومات إضافية مثل موعد عيد ميلادك القادم ويوم ميلادك، فإن الأداة توفر لك كل ذلك مجاناً وبدون تسجيل.
-    </p>
+    <div class="prose" style="text-align:center;">
+      <p>حاسبة العمر تختصر عليك عناء الحساب اليدوي المعقد بين تقويمين مختلفين تمامًا في طبيعتهما. سواء كنت تحتاج عمرك الهجري لمستند رسمي، أو تريد فقط معرفة عمرك بالضبط، فالأداة تمنحك ذلك في خطوات معدودة: نتائج دقيقة بكلا التقويمين، تفاصيل تتجاوز السنوات، وعد تنازلي لعيد ميلادك القادم — مجانًا وبلا تسجيل.</p>
+    </div>
   </div>
 </section>
+
 <footer>
   <div class="wrap">© 2026 حساب العمر - جميع الحقوق محفوظة</div>
 </footer>
 
 <script>
-// ================= تحويل التقويم الهجري (حساب جدولي قياسي) =================
 const ISLAMIC_EPOCH = 1948439.5;
 const GREGORIAN_EPOCH = 1721425.5;
 
@@ -450,8 +396,6 @@ function islamicMonthLength(year, month){
   return (month % 2 === 1) ? 30 : 29;
 }
 
-// ================= أسماء الأشهر والأيام =================
-const gregMonths = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
 const hijriMonths = ["محرم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوال","ذو القعدة","ذو الحجة"];
 const dayNames = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
 
@@ -462,7 +406,6 @@ function getSeason(month){
   return "الخريف";
 }
 
-// ================= المنطق الرئيسي للحاسبة =================
 let countdownInterval = null;
 
 function calculateAge(){
@@ -475,7 +418,6 @@ function calculateAge(){
   const by = birthDate.getFullYear(), bm = birthDate.getMonth()+1, bd = birthDate.getDate();
   const ry = today.getFullYear(), rm = today.getMonth()+1, rd = today.getDate();
 
-  // عمر ميلادي
   let gYears = ry - by, gMonths = rm - bm, gDays = rd - bd;
   if (gDays < 0){
     gMonths -= 1;
@@ -485,14 +427,12 @@ function calculateAge(){
   }
   if (gMonths < 0){ gYears -= 1; gMonths += 12; }
 
-  // إحصائيات إجمالية
   const diffMs = today - birthDate;
   const totalDays = Math.floor(diffMs / 86400000);
   const totalWeeks = Math.floor(totalDays / 7);
   const totalHours = Math.floor(diffMs / 3600000);
   const totalMinutes = Math.floor(diffMs / 60000);
 
-  // تحويل هجري
   const birthJD = gregorianToJD(by, bm, bd);
   const todayJD = gregorianToJD(ry, rm, rd);
   const hBirth = jdToIslamic(birthJD);
@@ -509,7 +449,6 @@ function calculateAge(){
   }
   if (hMonths < 0){ hYears -= 1; hMonths += 12; }
 
-  // عرض النتائج
   document.getElementById('gregBig').textContent = gYears + ' سنة';
   document.getElementById('gregSmall').textContent = gMonths + ' شهر و ' + gDays + ' يوم';
   document.getElementById('hijriBig').textContent = hYears + ' سنة';
@@ -531,7 +470,6 @@ function calculateAge(){
 
 function animateCount(elId, target){
   const el = document.getElementById(elId);
-  let start = 0;
   const duration = 700;
   const startTime = performance.now();
   function step(now){
@@ -544,13 +482,11 @@ function animateCount(elId, target){
 
 function startCountdown(bm, bd){
   if (countdownInterval) clearInterval(countdownInterval);
-
   function tick(){
     const now = new Date();
     let nextBday = new Date(now.getFullYear(), bm-1, bd);
     if (nextBday < now) nextBday = new Date(now.getFullYear()+1, bm-1, bd);
     const diff = nextBday - now;
-
     document.getElementById('cdDays').textContent = Math.floor(diff / 86400000);
     document.getElementById('cdHours').textContent = Math.floor((diff % 86400000) / 3600000);
     document.getElementById('cdMinutes').textContent = Math.floor((diff % 3600000) / 60000);
