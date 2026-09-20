@@ -1,11 +1,522 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>Mrzapto - Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حساب العمر بالهجري والميلادي - حاسبة العمر مجانية ودقيقة</title>
+<meta name="description" content="احسب عمرك بدقة بالتقويمين الهجري والميلادي في ثوانٍ. حاسبة العمر لدينا مجانية بالكامل وتعرض النتيجة بالسنوات والأشهر والأيام فوراً دون إعادة تحميل الصفحة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"ماذا لو لم أكن أعرف وقت ميلادي بالضبط؟","acceptedAnswer":{"@type":"Answer","text":"لا مشكلة، الحاسبة تعمل بشكل كامل بمجرد إدخال تاريخ الميلاد فقط دون الحاجة إلى الوقت الدقيق."}},
+    {"@type":"Question","name":"هل يمكنني حساب عمر شخص آخر؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكنك إدخال أي تاريخ ميلاد للتحقق من عمر أي شخص، سواء كان فرداً من العائلة أو صديقاً."}},
+    {"@type":"Question","name":"ما الفرق بين التقويم الهجري والميلادي؟","acceptedAnswer":{"@type":"Answer","text":"التقويم الميلادي شمسي ويحتوي على 365 أو 366 يوماً، بينما التقويم الهجري قمري ويحتوي على 354 أو 355 يوماً، ولهذا يختلف العمر بينهما بشكل ملحوظ."}},
+    {"@type":"Question","name":"لماذا عمري بالهجري أكبر من عمري بالميلادي؟","acceptedAnswer":{"@type":"Answer","text":"لأن السنة الهجرية أقصر من السنة الميلادية بحوالي 11 يوماً، فمع مرور الزمن يصبح عدد السنوات الهجرية المنقضية أكبر من عدد السنوات الميلادية."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --teal-900:#123C3D;
+    --teal-700:#1D5253;
+    --gold-600:#C9973B;
+    --gold-700:#A97C29;
+    --sand-50:#F2F5F3;
+    --cream:#FFFDF8;
+    --ink-900:#1B1F1E;
+    --ink-600:#55605B;
+    --moon-500:#7C93A6;
+    --moon-100:#E7ECEF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Tajawal', sans-serif;
+    background:var(--sand-50);
+    color:var(--ink-900);
+    line-height:1.7;
+  }
+  h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 20px;}
+
+  /* ===== Header ===== */
+  header{
+    background:var(--teal-900);
+    padding:18px 0;
+  }
+  .brand{color:var(--cream); font-size:22px; font-weight:800;}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:var(--teal-900);
+    padding:50px 0 90px;
+    position:relative;
+  }
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(26px,4vw,40px);
+    font-weight:800;
+    max-width:680px;
+    margin-bottom:14px;
+  }
+  .hero p.sub{
+    color:var(--moon-100);
+    max-width:560px;
+    font-size:17px;
+  }
+
+  /* ===== Calculator Card ===== */
+  .calc-card{
+    background:var(--cream);
+    border-radius:14px;
+    padding:30px;
+    margin-top:34px;
+    box-shadow:0 20px 40px rgba(18,60,61,0.25);
+    border-top:4px solid var(--gold-600);
+  }
+  .calc-row{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    align-items:flex-end;
+  }
+  .field{flex:1; min-width:220px;}
+  .field label{
+    display:block;
+    font-weight:700;
+    margin-bottom:8px;
+    font-size:15px;
+  }
+  .field input[type=date]{
+    width:100%;
+    padding:13px 14px;
+    border:2px solid var(--moon-100);
+    border-radius:8px;
+    font-family:'Tajawal', sans-serif;
+    font-size:16px;
+    background:#fff;
+  }
+  .field input[type=date]:focus{outline:3px solid var(--gold-600); border-color:var(--gold-600);}
+  .btn-main{
+    background:var(--gold-600);
+    color:var(--teal-900);
+    border:none;
+    padding:14px 34px;
+    border-radius:8px;
+    font-family:'Almarai', sans-serif;
+    font-weight:800;
+    font-size:16px;
+    cursor:pointer;
+    transition:background .2s;
+  }
+  .btn-main:hover{background:var(--gold-700);}
+  .btn-main:focus-visible{outline:3px solid var(--teal-700); outline-offset:2px;}
+
+  /* ===== Results ===== */
+  #results{display:none; margin-top:30px;}
+  .result-split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  @media(max-width:560px){.result-split{grid-template-columns:1fr;}}
+  .result-panel{
+    padding:22px;
+    border-radius:10px;
+  }
+  .result-panel.greg{background:linear-gradient(135deg,var(--gold-600),var(--gold-700)); color:var(--teal-900);}
+  .result-panel.hijri{background:var(--teal-700); color:var(--cream);}
+  .result-panel h3{font-size:15px; margin-bottom:10px; font-weight:700;}
+  .result-panel .big{font-size:30px; font-weight:800; font-family:'Almarai',sans-serif;}
+  .result-panel .small{font-size:14px; opacity:.9; margin-top:4px;}
+
+  .stats-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:16px;
+  }
+  @media(max-width:560px){.stats-row{grid-template-columns:1fr 1fr;}}
+  .stat-box{
+    background:var(--moon-100);
+    padding:16px 10px;
+    border-radius:8px;
+    text-align:center;
+  }
+  .stat-box .num{font-size:22px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--teal-900);}
+  .stat-box .lbl{font-size:13px; color:var(--ink-600); margin-top:2px;}
+
+  .extra-facts{
+    margin-top:16px;
+    background:var(--sand-50);
+    border-radius:8px;
+    padding:16px 18px;
+    font-size:15px;
+  }
+  .extra-facts div{margin-bottom:6px;}
+  .extra-facts b{color:var(--teal-900);}
+
+  .countdown-box{
+    margin-top:16px;
+    text-align:center;
+    background:var(--teal-900);
+    color:var(--cream);
+    border-radius:8px;
+    padding:18px;
+  }
+  .countdown-box .cd-title{font-size:14px; margin-bottom:10px; color:var(--moon-100);}
+  .cd-numbers{display:flex; justify-content:center; gap:18px; flex-wrap:wrap;}
+  .cd-numbers div{text-align:center;}
+  .cd-numbers .cd-val{font-size:24px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--gold-600);}
+  .cd-numbers .cd-lbl{font-size:12px; color:var(--moon-100);}
+
+  /* ===== Sections ===== */
+  section{padding:60px 0;}
+  section h2{font-size:26px; margin-bottom:30px; text-align:center;}
+
+  .steps{display:flex; gap:24px; flex-wrap:wrap; justify-content:center;}
+  .step{flex:1; min-width:220px; text-align:center;}
+  .step .num{
+    width:44px; height:44px; border-radius:50%;
+    background:var(--gold-600); color:var(--teal-900);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-family:'Almarai',sans-serif;
+    margin:0 auto 14px;
+  }
+
+  .feature-row{
+    display:flex; gap:20px; align-items:flex-start;
+    padding:18px 0; border-bottom:1px solid var(--moon-100);
+  }
+  .feature-row:last-child{border-bottom:none;}
+  .feature-row .bar{
+    width:5px; align-self:stretch; background:var(--gold-600); border-radius:4px; flex-shrink:0;
+  }
+  .feature-row h3{font-size:17px; margin-bottom:6px;}
+  .feature-row p{color:var(--ink-600); font-size:15px;}
+
+  .compare{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    border-radius:12px; overflow:hidden;
+  }
+  @media(max-width:560px){.compare{grid-template-columns:1fr;}}
+  .compare > div{padding:26px;}
+  .compare .sun{background:var(--gold-600); color:var(--teal-900);}
+  .compare .moon{background:var(--teal-900); color:var(--cream);}
+  .compare h3{margin-bottom:12px; font-size:18px;}
+  .compare ul{padding-right:20px; font-size:15px; line-height:1.9;}
+
+  .faq-item{
+    border-bottom:1px solid var(--moon-100);
+    padding:16px 0;
+  }
+  .faq-item summary{
+    cursor:pointer; font-weight:700; font-size:16px;
+    list-style:none;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::before{content:"+"; color:var(--gold-700); font-weight:800; margin-left:10px;}
+  .faq-item[open] summary::before{content:"−";}
+  .faq-item p{margin-top:10px; color:var(--ink-600);}
+
+  footer{
+    background:var(--teal-900); color:var(--moon-100);
+    text-align:center; padding:26px 0; font-size:14px;
+  }
+</style>
 </head>
 <body>
-    <h1>Site Working!</h1>
-    <p>Yeh test page hai.</p>
+
+<header>
+  <div class="wrap"><span class="brand">حساب العمر</span></div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>احسب عمرك بالهجري والميلادي في ثانية واحدة</h1>
+    <p class="sub">أدخل تاريخ ميلادك واحصل على عمرك الدقيق بالتقويمين معاً، مع تفاصيل إضافية لن تجدها في مكان آخر.</p>
+
+    <div class="calc-card">
+      <div class="calc-row">
+        <div class="field">
+          <label for="birthdate">تاريخ الميلاد (بالميلادي)</label>
+          <input type="date" id="birthdate">
+        </div>
+        <button class="btn-main" onclick="calculateAge()">احسب عمري</button>
+      </div>
+
+      <div id="results">
+        <div class="result-split">
+          <div class="result-panel greg">
+            <h3>عمرك بالتقويم الميلادي</h3>
+            <div class="big" id="gregBig">-</div>
+            <div class="small" id="gregSmall">-</div>
+          </div>
+          <div class="result-panel hijri">
+            <h3>عمرك بالتقويم الهجري</h3>
+            <div class="big" id="hijriBig">-</div>
+            <div class="small" id="hijriSmall">-</div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box"><div class="num" id="statDays">0</div><div class="lbl">إجمالي الأيام</div></div>
+          <div class="stat-box"><div class="num" id="statWeeks">0</div><div class="lbl">إجمالي الأسابيع</div></div>
+          <div class="stat-box"><div class="num" id="statHours">0</div><div class="lbl">إجمالي الساعات</div></div>
+          <div class="stat-box"><div class="num" id="statMinutes">0</div><div class="lbl">إجمالي الدقائق</div></div>
+        </div>
+
+        <div class="extra-facts">
+          <div><b>يوم ميلادك:</b> <span id="factDay">-</span></div>
+          <div><b>فصل ميلادك:</b> <span id="factSeason">-</span></div>
+          <div><b>تاريخ ميلادك بالهجري:</b> <span id="factHijriDate">-</span></div>
+        </div>
+
+        <div class="countdown-box">
+          <div class="cd-title">الوقت المتبقي لعيد ميلادك القادم</div>
+          <div class="cd-numbers">
+            <div><div class="cd-val" id="cdDays">0</div><div class="cd-lbl">يوم</div></div>
+            <div><div class="cd-val" id="cdHours">0</div><div class="cd-lbl">ساعة</div></div>
+            <div><div class="cd-val" id="cdMinutes">0</div><div class="cd-lbl">دقيقة</div></div>
+            <div><div class="cd-val" id="cdSeconds">0</div><div class="cd-lbl">ثانية</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>كيف تستخدم حاسبة العمر؟</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>أدخل تاريخ ميلادك</h3><p>حدد يوم وشهر وسنة ميلادك بالتقويم الميلادي.</p></div>
+      <div class="step"><div class="num">2</div><h3>اضغط احسب عمري</h3><p>ستظهر النتيجة فوراً دون إعادة تحميل الصفحة.</p></div>
+      <div class="step"><div class="num">3</div><h3>شاهد النتيجة الكاملة</h3><p>عمرك بالتقويمين، مع تفاصيل إضافية دقيقة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>لماذا حاسبة العمر لدينا؟</h2>
+    <div class="feature-row"><div class="bar"></div><div><h3>بدون إعادة تحميل الصفحة</h3><p>النتيجة تظهر فوراً أثناء بقائك في نفس المكان، تجربة أسرع من المواقع الأخرى.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>التقويمان معاً في نتيجة واحدة</h3><p>لا حاجة لزيارة صفحتين منفصلتين، تحصل على عمرك بالميلادي والهجري في آن واحد.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>دقة كاملة مع مراعاة السنوات الكبيسة</h3><p>الحاسبة تأخذ في الاعتبار السنوات الكبيسة في كلا التقويمين تلقائياً.</p></div></div>
+    <div class="feature-row"><div class="bar"></div><div><h3>مجانية بالكامل بدون تسجيل</h3><p>استخدم الحاسبة عدد المرات الذي تريده دون أي رسوم أو إنشاء حساب.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>الهجري مقابل الميلادي</h2>
+    <div class="compare">
+      <div class="sun">
+        <h3>التقويم الميلادي</h3>
+        <ul>
+          <li>يعتمد على دورة الشمس</li>
+          <li>365 أو 366 يوماً في السنة</li>
+          <li>مستخدم رسمياً في المعاملات الحكومية</li>
+        </ul>
+      </div>
+      <div class="moon">
+        <h3>التقويم الهجري</h3>
+        <ul>
+          <li>يعتمد على دورة القمر</li>
+          <li>354 أو 355 يوماً في السنة</li>
+          <li>مستخدم في المناسبات الإسلامية والوثائق الدينية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>الأسئلة الشائعة</h2>
+    <details class="faq-item" open>
+      <summary>ماذا لو لم أكن أعرف وقت ميلادي بالضبط؟</summary>
+      <p>لا مشكلة، الحاسبة تعمل بشكل كامل بمجرد إدخال تاريخ الميلاد فقط دون الحاجة إلى الوقت الدقيق.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل يمكنني حساب عمر شخص آخر؟</summary>
+      <p>نعم، يمكنك إدخال أي تاريخ ميلاد للتحقق من عمر أي شخص، سواء كان فرداً من العائلة أو صديقاً.</p>
+    </details>
+    <details class="faq-item">
+      <summary>ما الفرق بين التقويم الهجري والميلادي؟</summary>
+      <p>التقويم الميلادي شمسي ويحتوي على 365 أو 366 يوماً، بينما التقويم الهجري قمري ويحتوي على 354 أو 355 يوماً، ولهذا يختلف العمر بينهما بشكل ملحوظ.</p>
+    </details>
+    <details class="faq-item">
+      <summary>لماذا عمري بالهجري أكبر من عمري بالميلادي؟</summary>
+      <p>لأن السنة الهجرية أقصر من السنة الميلادية بحوالي 11 يوماً، فمع مرور الزمن يصبح عدد السنوات الهجرية المنقضية أكبر من عدد السنوات الميلادية.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 حساب العمر - جميع الحقوق محفوظة</div>
+</footer>
+
+<script>
+// ================= تحويل التقويم الهجري (حساب جدولي قياسي) =================
+const ISLAMIC_EPOCH = 1948439.5;
+const GREGORIAN_EPOCH = 1721425.5;
+
+function mod(a, b){ return a - b * Math.floor(a / b); }
+
+function isLeapGregorian(year){
+  return (year % 4 === 0) && !((year % 100 === 0) && (year % 400 !== 0));
+}
+
+function gregorianToJD(year, month, day){
+  return (GREGORIAN_EPOCH - 1) +
+    (365 * (year - 1)) +
+    Math.floor((year - 1) / 4) +
+    (-Math.floor((year - 1) / 100)) +
+    Math.floor((year - 1) / 400) +
+    Math.floor((((367 * month) - 362) / 12) +
+      (month <= 2 ? 0 : (isLeapGregorian(year) ? -1 : -2)) + day);
+}
+
+function isLeapIslamic(year){
+  return mod((year * 11) + 14, 30) < 11;
+}
+
+function islamicToJD(year, month, day){
+  return day +
+    Math.ceil(29.5 * (month - 1)) +
+    (year - 1) * 354 +
+    Math.floor((3 + (11 * year)) / 30) +
+    ISLAMIC_EPOCH - 1;
+}
+
+function jdToIslamic(jd){
+  jd = Math.floor(jd) + 0.5;
+  const year = Math.floor(((30 * (jd - ISLAMIC_EPOCH)) + 10646) / 10631);
+  const month = Math.min(12, Math.ceil((jd - (29 + islamicToJD(year, 1, 1))) / 29.5) + 1);
+  const day = Math.round((jd - islamicToJD(year, month, 1)) + 1);
+  return { year, month, day };
+}
+
+function islamicMonthLength(year, month){
+  if (month === 12 && isLeapIslamic(year)) return 30;
+  return (month % 2 === 1) ? 30 : 29;
+}
+
+// ================= أسماء الأشهر والأيام =================
+const gregMonths = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const hijriMonths = ["محرم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوال","ذو القعدة","ذو الحجة"];
+const dayNames = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+
+function getSeason(month){
+  if ([12,1,2].includes(month)) return "الشتاء";
+  if ([3,4,5].includes(month)) return "الربيع";
+  if ([6,7,8].includes(month)) return "الصيف";
+  return "الخريف";
+}
+
+// ================= المنطق الرئيسي للحاسبة =================
+let countdownInterval = null;
+
+function calculateAge(){
+  const input = document.getElementById('birthdate').value;
+  if(!input){ alert('الرجاء إدخال تاريخ الميلاد'); return; }
+
+  const birthDate = new Date(input + 'T00:00:00');
+  const today = new Date();
+
+  const by = birthDate.getFullYear(), bm = birthDate.getMonth()+1, bd = birthDate.getDate();
+  const ry = today.getFullYear(), rm = today.getMonth()+1, rd = today.getDate();
+
+  // عمر ميلادي
+  let gYears = ry - by, gMonths = rm - bm, gDays = rd - bd;
+  if (gDays < 0){
+    gMonths -= 1;
+    let prevMonth = rm - 1, prevYear = ry;
+    if (prevMonth === 0){ prevMonth = 12; prevYear -= 1; }
+    gDays += new Date(prevYear, prevMonth, 0).getDate();
+  }
+  if (gMonths < 0){ gYears -= 1; gMonths += 12; }
+
+  // إحصائيات إجمالية
+  const diffMs = today - birthDate;
+  const totalDays = Math.floor(diffMs / 86400000);
+  const totalWeeks = Math.floor(totalDays / 7);
+  const totalHours = Math.floor(diffMs / 3600000);
+  const totalMinutes = Math.floor(diffMs / 60000);
+
+  // تحويل هجري
+  const birthJD = gregorianToJD(by, bm, bd);
+  const todayJD = gregorianToJD(ry, rm, rd);
+  const hBirth = jdToIslamic(birthJD);
+  const hToday = jdToIslamic(todayJD);
+
+  let hYears = hToday.year - hBirth.year;
+  let hMonths = hToday.month - hBirth.month;
+  let hDays = hToday.day - hBirth.day;
+  if (hDays < 0){
+    hMonths -= 1;
+    let prevMonth = hToday.month - 1, prevYear = hToday.year;
+    if (prevMonth === 0){ prevMonth = 12; prevYear -= 1; }
+    hDays += islamicMonthLength(prevYear, prevMonth);
+  }
+  if (hMonths < 0){ hYears -= 1; hMonths += 12; }
+
+  // عرض النتائج
+  document.getElementById('gregBig').textContent = gYears + ' سنة';
+  document.getElementById('gregSmall').textContent = gMonths + ' شهر و ' + gDays + ' يوم';
+  document.getElementById('hijriBig').textContent = hYears + ' سنة';
+  document.getElementById('hijriSmall').textContent = hMonths + ' شهر و ' + hDays + ' يوم';
+
+  animateCount('statDays', totalDays);
+  animateCount('statWeeks', totalWeeks);
+  animateCount('statHours', totalHours);
+  animateCount('statMinutes', totalMinutes);
+
+  document.getElementById('factDay').textContent = dayNames[birthDate.getDay()];
+  document.getElementById('factSeason').textContent = getSeason(bm);
+  document.getElementById('factHijriDate').textContent = hBirth.day + ' ' + hijriMonths[hBirth.month-1] + ' ' + hBirth.year + ' هـ';
+
+  document.getElementById('results').style.display = 'block';
+
+  startCountdown(bm, bd);
+}
+
+function animateCount(elId, target){
+  const el = document.getElementById(elId);
+  let start = 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now){
+    const progress = Math.min((now - startTime) / duration, 1);
+    el.textContent = Math.floor(progress * target).toLocaleString('ar');
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function startCountdown(bm, bd){
+  if (countdownInterval) clearInterval(countdownInterval);
+
+  function tick(){
+    const now = new Date();
+    let nextBday = new Date(now.getFullYear(), bm-1, bd);
+    if (nextBday < now) nextBday = new Date(now.getFullYear()+1, bm-1, bd);
+    const diff = nextBday - now;
+
+    document.getElementById('cdDays').textContent = Math.floor(diff / 86400000);
+    document.getElementById('cdHours').textContent = Math.floor((diff % 86400000) / 3600000);
+    document.getElementById('cdMinutes').textContent = Math.floor((diff % 3600000) / 60000);
+    document.getElementById('cdSeconds').textContent = Math.floor((diff % 60000) / 1000);
+  }
+  tick();
+  countdownInterval = setInterval(tick, 1000);
+}
+</script>
 </body>
 </html>
