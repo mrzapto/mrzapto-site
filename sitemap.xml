@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://mrzapto.online/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://mrzapto.online/</loc>
@@ -18,16 +12,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/kam-omri-belhijri.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/farq-al-omor.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/hasabat-omr-altifl.html</loc>
     <changefreq>weekly</changefreq>
@@ -39,51 +36,61 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1984.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1987.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1990.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1991.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1993.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1994.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1995.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-1998.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-2005.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/mawalid-2009.html</loc>
     <changefreq>monthly</changefreq>
@@ -95,26 +102,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/hijri-1402.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/hijri-1414.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/hijri-1427.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://mrzapto.online/hijri-1433.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-</urlset>
 </urlset>
