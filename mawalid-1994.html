@@ -104,12 +104,47 @@
   .cta-box a{color:var(--gold-600); font-weight:800; text-decoration:none;}
   .related{margin-top:16px; font-size:15px;}
   footer{background:var(--teal-900); color:var(--moon-100); text-align:center; padding:26px 0; font-size:14px;}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+.brand-link{display:flex; align-items:center; gap:10px; text-decoration:none;}
+.main-nav{display:flex; gap:18px; flex-wrap:wrap;}
+.main-nav a{color:var(--moon-100); text-decoration:none; font-size:14px; font-weight:700; transition:color .2s;}
+.main-nav a:hover{color:var(--gold-600);}
+.nav-toggle{display:none; background:none; border:none; color:var(--cream); font-size:24px; cursor:pointer;}
+@media(max-width:640px){
+  .nav-toggle{display:block;}
+  .main-nav{display:none; width:100%; flex-direction:column; gap:14px; padding-top:14px;}
+  .main-nav.open{display:flex;}
+}
+.site-footer{background:var(--teal-900); color:var(--moon-100); padding:44px 0 20px; font-size:14px;}
+.footer-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-bottom:28px;}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+.footer-col h4{color:var(--cream); font-family:'Almarai',sans-serif; font-size:15px; margin-bottom:12px;}
+.footer-col a{display:block; color:var(--moon-100); text-decoration:none; font-size:13.5px; margin-bottom:8px; opacity:.85;}
+.footer-col a:hover{opacity:1; color:var(--gold-600);}
+.footer-bottom{text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:13px; opacity:.8;}
 </style>
 </head>
 <body>
 
-<header><div class="wrap"><a href="/" class="brand">حساب العمر</a></div></header>
-
+<header>
+  <div class="wrap nav-wrap">
+    <a href="/" class="brand-link">
+      <svg width="34" height="34" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <circle cx="19" cy="19" r="19" fill="#C9973B"/>
+        <text x="19" y="26" font-family="Almarai, sans-serif" font-size="20" font-weight="800" fill="#123C3D" text-anchor="middle">ع</text>
+      </svg>
+      <span class="brand">حساب العمر</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="القائمة">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="/">الرئيسية</a>
+      <a href="/hisab-al-omor-belmiladi.html">بالميلادي</a>
+      <a href="/kam-omri-belhijri.html">بالهجري</a>
+      <a href="/farq-al-omor.html">فرق العمر</a>
+      <a href="/hasabat-omr-altifl.html">عمر الطفل</a>
+    </nav>
+  </div>
+</header>
 <div class="hero">
   <div class="wrap">
     <h1>مواليد 1994 كم عمرهم في 2026؟</h1>
@@ -373,8 +408,43 @@
   </div>
 </section>
 
-<footer><div class="wrap">© 2026 حساب العمر - جميع الحقوق محفوظة</div></footer>
-
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>الحاسبات الرئيسية</h4>
+        <a href="/">الحاسبة الرئيسية (هجري وميلادي)</a>
+        <a href="/hisab-al-omor-belmiladi.html">حساب العمر بالميلادي</a>
+        <a href="/kam-omri-belhijri.html">كم عمري بالهجري</a>
+        <a href="/farq-al-omor.html">فرق العمر بين شخصين</a>
+        <a href="/hasabat-omr-altifl.html">حاسبة عمر الطفل</a>
+      </div>
+      <div class="footer-col">
+        <h4>مواليد حسب السنة</h4>
+        <a href="/mawalid-1983.html">مواليد 1983</a>
+        <a href="/mawalid-1984.html">مواليد 1984</a>
+        <a href="/mawalid-1987.html">مواليد 1987</a>
+        <a href="/mawalid-1990.html">مواليد 1990</a>
+        <a href="/mawalid-1991.html">مواليد 1991</a>
+        <a href="/mawalid-1993.html">مواليد 1993</a>
+        <a href="/mawalid-1994.html">مواليد 1994</a>
+        <a href="/mawalid-1995.html">مواليد 1995</a>
+        <a href="/mawalid-1998.html">مواليد 1998</a>
+        <a href="/mawalid-2005.html">مواليد 2005</a>
+        <a href="/mawalid-2009.html">مواليد 2009</a>
+      </div>
+      <div class="footer-col">
+        <h4>تحويل التاريخ الهجري</h4>
+        <a href="/hijri-1390.html">1390 هجري</a>
+        <a href="/hijri-1402.html">1402 هجري</a>
+        <a href="/hijri-1414.html">1414 هجري</a>
+        <a href="/hijri-1427.html">1427 هجري</a>
+        <a href="/hijri-1433.html">1433 هجري</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 حساب العمر - جميع الحقوق محفوظة</div>
+  </div>
+</footer>
 <script>
 const BIRTH_YEAR = 1994;
 
@@ -424,6 +494,11 @@ function calcYearAge(){
   document.getElementById('gregBig').textContent = gYears+' سنة، '+gMonths+' شهر، '+gDays+' يوم';
   document.getElementById('hijriBig').textContent = hYears+' سنة، '+hMonths+' شهر، '+hDays+' يوم';
   document.getElementById('results').style.display='block';
+}
+</script>
+  <script>
+function toggleNav(){
+  document.getElementById('mainNav').classList.toggle('open');
 }
 </script>
 </body>
