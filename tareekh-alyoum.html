@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://mrzapto.online/tareekh-alyoum.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تاريخ اليوم بالهجري والميلادي - التقويم الحالي مباشر</title>
+<meta name="description" content="تاريخ اليوم الهجري والميلادي محدث مباشرة، مع جدول الأسبوع والشهر الهجري الحالي كاملاً وتقويم أم القرى.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"ما هو تاريخ اليوم بالهجري؟","acceptedAnswer":{"@type":"Answer","text":"يظهر تاريخ اليوم بالهجري تلقائياً أعلى الصفحة، محدثاً كل يوم دون الحاجة لأي إدخال منك، وفق حساب تقويمي دقيق."}},
+    {"@type":"Question","name":"لماذا يختلف التاريخ الهجري أحياناً بيوم بين دولة وأخرى؟","acceptedAnswer":{"@type":"Answer","text":"لأن بعض الدول تعتمد الحساب الفلكي المسبق (كتقويم أم القرى)، بينما تعتمد دول أخرى رؤية الهلال الفعلية، وقد تختلف النتيجتان بيوم واحد."}},
+    {"@type":"Question","name":"كم يوماً في الشهر الهجري الواحد؟","acceptedAnswer":{"@type":"Answer","text":"29 أو 30 يوماً بحسب دورة القمر، ولهذا تبلغ السنة الهجرية كاملة 354 أو 355 يوماً، أقصر من السنة الميلادية بنحو 11 يوماً."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --teal-900:#123C3D; --teal-700:#1D5253; --gold-600:#C9973B; --gold-700:#A97C29;
+    --sand-50:#F2F5F3; --cream:#FFFDF8; --ink-900:#1B1F1E; --ink-600:#55605B; --moon-100:#E7ECEF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Tajawal', sans-serif; background:var(--sand-50); color:var(--ink-900); line-height:1.7;}
+  h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
+  a{color:var(--gold-700);}
+  .wrap{max-width:900px; margin:0 auto; padding:0 20px;}
+  .prose{max-width:760px; color:var(--ink-600); font-size:16px; margin:0 auto;}
+  .prose p{margin-bottom:14px;}
+  .prose ul,.prose ol{padding-right:20px; margin-bottom:14px;}
+  .prose li{margin-bottom:8px;}
+
+  /* Header/Nav */
+  header{background:var(--teal-900); padding:18px 0;}
+  .brand{color:var(--cream); font-size:22px; font-weight:800; text-decoration:none;}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  .brand-link{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .main-nav{display:flex; gap:18px; flex-wrap:wrap;}
+  .main-nav a{color:var(--moon-100); text-decoration:none; font-size:14px; font-weight:700; transition:color .2s;}
+  .main-nav a:hover{color:var(--gold-600);}
+  .nav-toggle{display:none; background:none; border:none; color:var(--cream); font-size:24px; cursor:pointer;}
+  @media(max-width:640px){
+    .nav-toggle{display:block;}
+    .main-nav{display:none; width:100%; flex-direction:column; gap:14px; padding-top:14px;}
+    .main-nav.open{display:flex;}
+  }
+
+  .hero{background:var(--teal-900); padding:40px 0 80px;}
+  .hero h1{color:var(--cream); font-size:clamp(22px,4vw,32px); font-weight:800; text-align:center; margin-bottom:30px;}
+
+  .date-cards{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media(max-width:560px){.date-cards{grid-template-columns:1fr;}}
+  .date-card{
+    background:var(--cream); border-radius:14px; padding:28px; text-align:center;
+    box-shadow:0 16px 32px rgba(18,60,61,0.2);
+  }
+  .date-card.greg{border-top:5px solid var(--gold-600);}
+  .date-card.hijri{border-top:5px solid var(--teal-700); background:var(--teal-900);}
+  .date-card .label{font-size:14px; color:var(--ink-600); margin-bottom:8px; font-weight:700;}
+  .date-card.hijri .label{color:var(--moon-100);}
+  .date-card .day-name{font-size:16px; color:var(--teal-900); font-weight:700; margin-bottom:6px;}
+  .date-card.hijri .day-name{color:var(--gold-600);}
+  .date-card .full-date{font-size:26px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--teal-900);}
+  .date-card.hijri .full-date{color:var(--cream);}
+
+  .extra-row{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; max-width:900px; margin-left:auto; margin-right:auto;}
+  @media(max-width:560px){.extra-row{grid-template-columns:1fr 1fr;}}
+  .extra-box{background:var(--moon-100); padding:14px 10px; border-radius:8px; text-align:center;}
+  .extra-box .num{font-size:18px; font-weight:800; font-family:'Almarai',sans-serif; color:var(--teal-900);}
+  .extra-box .lbl{font-size:12px; color:var(--ink-600); margin-top:2px;}
+
+  section{padding:50px 0;}
+  section h2{font-size:24px; margin-bottom:20px; text-align:center;}
+  section h3{font-size:18px; margin:18px 0 8px; color:var(--ink-900); text-align:center;}
+
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:14.5px;}
+  th{background:var(--teal-900); color:var(--cream); padding:10px 8px; text-align:center; font-family:'Almarai',sans-serif; font-size:13.5px;}
+  td{padding:8px; text-align:center; border-bottom:1px solid var(--moon-100); color:var(--ink-600);}
+  tr.today-row td{background:var(--gold-600); color:var(--teal-900); font-weight:800;}
+  tr:nth-child(even):not(.today-row) td{background:var(--sand-50);}
+  .table-wrap{overflow-x:auto;}
+
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:12px; overflow:hidden; margin-top:16px;}
+  @media(max-width:560px){.compare{grid-template-columns:1fr;}}
+  .compare > div{padding:22px;}
+  .compare .a{background:var(--gold-600); color:var(--teal-900);}
+  .compare .b{background:var(--teal-900); color:var(--cream);}
+  .compare h4{margin-bottom:10px; font-size:16px; font-family:'Almarai',sans-serif;}
+
+  .faq-item{border-bottom:1px solid var(--moon-100); padding:16px 0;}
+  .faq-item summary{cursor:pointer; font-weight:700; font-size:16px; list-style:none;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::before{content:"+"; color:var(--gold-700); font-weight:800; margin-left:10px;}
+  .faq-item[open] summary::before{content:"−";}
+  .faq-item p{margin-top:10px; color:var(--ink-600);}
+
+  .cta-box{background:var(--teal-900); color:var(--cream); border-radius:10px; padding:22px; text-align:center; margin-top:10px;}
+  .cta-box a{color:var(--gold-600); font-weight:800; text-decoration:none;}
+
+  /* Full footer */
+  .site-footer{background:var(--teal-900); color:var(--moon-100); padding:44px 0 20px; font-size:14px;}
+  .footer-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-bottom:28px;}
+  @media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-col h4{color:var(--cream); font-family:'Almarai',sans-serif; font-size:15px; margin-bottom:12px;}
+  .footer-col a{display:block; color:var(--moon-100); text-decoration:none; font-size:13.5px; margin-bottom:8px; opacity:.85;}
+  .footer-col a:hover{opacity:1; color:var(--gold-600);}
+  .footer-bottom{text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:13px; opacity:.8;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-wrap">
+    <a href="/" class="brand-link">
+      <svg width="34" height="34" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <circle cx="19" cy="19" r="19" fill="#C9973B"/>
+        <text x="19" y="26" font-family="Almarai, sans-serif" font-size="20" font-weight="800" fill="#123C3D" text-anchor="middle">ع</text>
+      </svg>
+      <span class="brand">حساب العمر</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="القائمة">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="/">الرئيسية</a>
+      <a href="/hisab-al-omor-belmiladi.html">بالميلادي</a>
+      <a href="/kam-omri-belhijri.html">بالهجري</a>
+      <a href="/tahweel-altareekh.html">تحويل التاريخ</a>
+      <a href="/farq-al-omor.html">فرق العمر</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>تاريخ اليوم بالهجري والميلادي</h1>
+
+    <div class="date-cards">
+      <div class="date-card greg">
+        <div class="label">التاريخ الميلادي</div>
+        <div class="day-name" id="gregDayName">-</div>
+        <div class="full-date" id="gregFullDate">-</div>
+      </div>
+      <div class="date-card hijri">
+        <div class="label">التاريخ الهجري (وفق تقويم أم القرى)</div>
+        <div class="day-name" id="hijriDayName">-</div>
+        <div class="full-date" id="hijriFullDate">-</div>
+      </div>
+    </div>
+
+    <div class="extra-row">
+      <div class="extra-box"><div class="num" id="weekNum">-</div><div class="lbl">رقم الأسبوع في السنة</div></div>
+      <div class="extra-box"><div class="num" id="dayOfYear">-</div><div class="lbl">اليوم رقم في السنة</div></div>
+      <div class="extra-box"><div class="num" id="daysLeft">-</div><div class="lbl">يومًا متبقيًا في السنة</div></div>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <div class="prose">
+      <p>تعرض هذه الصفحة <b>تاريخ اليوم بالتقويمين الهجري والميلادي</b> بشكل تلقائي ومباشر، محدثًا كل يوم دون الحاجة لأي إدخال منك. التاريخ الهجري محسوب وفق حساب تقويمي دقيق يقابل ما يعتمده <b>تقويم أم القرى</b> الرسمي في المملكة العربية السعودية.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>كيف يُحسب التاريخ الهجري أصلًا؟</h2>
+    <div class="prose">
+      <p>الأساس هو <b>الدورة القمرية</b>. يبدأ الشهر الهجري مع ولادة القمر الجديد (الهلال)، وينتهي بعد 29 أو 30 يومًا حين يُرى الهلال التالي. توجد طريقتان لتحديد بداية كل شهر:</p>
+      <ul>
+        <li><b>الحساب الفلكي:</b> يتوقع ولادة الهلال بمعايير دقيقة قبل حلول الشهر، فتُحدد التواريخ مسبقًا لسنوات قادمة دون تدخل يدوي. هذا ما يعتمده تقويم أم القرى.</li>
+        <li><b>رؤية الهلال الفعلية:</b> تعتمد على مشاهدة الهلال بالعين المجردة، فتتأثر بالطقس والموقع الجغرافي لكل منطقة.</li>
+      </ul>
+      <p>ولهذا قد يختلف التاريخ الهجري المعلن بيوم واحد بين دولة وأخرى، حسب الطريقة المعتمدة فيها.</p>
+
+      <div class="compare">
+        <div class="a">
+          <h4>الحساب الفلكي (أم القرى)</h4>
+          <p>تاريخ ثابت معروف مقدمًا، يعتمده أغلب المواقع والتطبيقات للاستخدام اليومي والمعاملات الرسمية.</p>
+        </div>
+        <div class="b">
+          <h4>رؤية الهلال الفعلية</h4>
+          <p>يُعلن ليلة كل شهر جديد، وتعتمده بعض الجهات الدينية لتحديد بدايات الأشهر القمرية كرمضان وذي الحجة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>الأسبوع الحالي (هجري وميلادي)</h2>
+    <div class="table-wrap">
+      <table id="weekTable">
+        <tr><th>اليوم</th><th>الهجري</th><th>الميلادي</th></tr>
+      </table>
+    </div>
+    <p style="text-align:center; color:var(--ink-600); font-size:14px;">يتحدث هذا الجدول تلقائياً كل يوم ليعرض دائماً الأسبوع الحالي.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 id="monthTitle">الشهر الهجري الحالي كاملاً</h2>
+    <div class="table-wrap">
+      <table id="monthTable">
+        <tr><th>اليوم الهجري</th><th>اليوم</th><th>الموافق الميلادي</th></tr>
+      </table>
+    </div>
+    <p style="text-align:center; color:var(--ink-600); font-size:14px;">الصف المظلل هو اليوم الحالي. يتحدث الجدول تلقائياً كل شهر.</p>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <h2>أسماء الأشهر الهجرية بالترتيب</h2>
+    <div class="prose" style="text-align:center;">
+      <p>محرم، صفر، ربيع الأول، ربيع الآخر، جمادى الأولى، جمادى الآخرة، رجب، شعبان، رمضان، شوال، ذو القعدة، ذو الحجة.</p>
+      <p>كل شهر إما <b>29 أو 30 يومًا</b> بحسب دورة القمر، ولهذا تبلغ السنة الهجرية كاملة <b>354 أو 355 يومًا</b>، أقصر من السنة الميلادية (365 أو 366 يومًا) بنحو 11 يومًا.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>الأسئلة الشائعة</h2>
+    <details class="faq-item" open>
+      <summary>ما هو تاريخ اليوم بالهجري؟</summary>
+      <p>يظهر تاريخ اليوم بالهجري تلقائياً أعلى الصفحة، محدثاً كل يوم دون الحاجة لأي إدخال منك، وفق حساب تقويمي دقيق.</p>
+    </details>
+    <details class="faq-item">
+      <summary>لماذا يختلف التاريخ الهجري أحياناً بيوم بين دولة وأخرى؟</summary>
+      <p>لأن بعض الدول تعتمد الحساب الفلكي المسبق (كتقويم أم القرى)، بينما تعتمد دول أخرى رؤية الهلال الفعلية، وقد تختلف النتيجتان بيوم واحد.</p>
+    </details>
+    <details class="faq-item">
+      <summary>كم يوماً في الشهر الهجري الواحد؟</summary>
+      <p>29 أو 30 يوماً بحسب دورة القمر، ولهذا تبلغ السنة الهجرية كاملة 354 أو 355 يوماً، أقصر من السنة الميلادية بنحو 11 يوماً.</p>
+    </details>
+    <details class="faq-item">
+      <summary>هل التاريخ يتحدث تلقائياً كل يوم؟</summary>
+      <p>نعم، الصفحة تعرض دائماً تاريخ اليوم الحالي بالضبط بناءً على تاريخ جهازك، وتُحدَّث تلقائياً كل يوم دون الحاجة لتحديث المقال يدوياً.</p>
+    </details>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <div class="cta-box">
+      <p>تريد تحويل تاريخ آخر أو حساب عمرك؟</p>
+      <a href="/">استخدم حاسبة العمر الرئيسية من هنا ←</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>الحاسبات الرئيسية</h4>
+        <a href="/">الحاسبة الرئيسية (هجري وميلادي)</a>
+        <a href="/hisab-al-omor-belmiladi.html">حساب العمر بالميلادي</a>
+        <a href="/kam-omri-belhijri.html">كم عمري بالهجري</a>
+        <a href="/farq-al-omor.html">فرق العمر بين شخصين</a>
+        <a href="/hasabat-omr-altifl.html">حاسبة عمر الطفل</a>
+        <a href="/tahweel-altareekh.html">تحويل التاريخ هجري وميلادي</a>
+        <a href="/tareekh-alyoum.html">تاريخ اليوم</a>
+      </div>
+      <div class="footer-col">
+        <h4>مواليد حسب السنة</h4>
+        <a href="/mawalid-1983.html">مواليد 1983</a>
+        <a href="/mawalid-1984.html">مواليد 1984</a>
+        <a href="/mawalid-1987.html">مواليد 1987</a>
+        <a href="/mawalid-1990.html">مواليد 1990</a>
+        <a href="/mawalid-1991.html">مواليد 1991</a>
+        <a href="/mawalid-1993.html">مواليد 1993</a>
+        <a href="/mawalid-1994.html">مواليد 1994</a>
+        <a href="/mawalid-1995.html">مواليد 1995</a>
+        <a href="/mawalid-1998.html">مواليد 1998</a>
+        <a href="/mawalid-2005.html">مواليد 2005</a>
+        <a href="/mawalid-2009.html">مواليد 2009</a>
+      </div>
+      <div class="footer-col">
+        <h4>تحويل التاريخ الهجري</h4>
+        <a href="/hijri-1390.html">1390 هجري</a>
+        <a href="/hijri-1402.html">1402 هجري</a>
+        <a href="/hijri-1414.html">1414 هجري</a>
+        <a href="/hijri-1427.html">1427 هجري</a>
+        <a href="/hijri-1433.html">1433 هجري</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 حساب العمر - جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){
+  document.getElementById('mainNav').classList.toggle('open');
+}
+
+const ISLAMIC_EPOCH = 1948439.5, GREGORIAN_EPOCH = 1721425.5;
+function mod(a,b){return a-b*Math.floor(a/b);}
+function isLeapGregorian(y){return (y%4===0)&&!((y%100===0)&&(y%400!==0));}
+function gregorianToJD(y,m,d){
+  return (GREGORIAN_EPOCH-1)+(365*(y-1))+Math.floor((y-1)/4)+(-Math.floor((y-1)/100))+Math.floor((y-1)/400)+
+    Math.floor((((367*m)-362)/12)+(m<=2?0:(isLeapGregorian(y)?-1:-2))+d);
+}
+function jdToGregorian(jd){
+  jd = Math.floor(jd)+0.5;
+  let wjd = Math.floor(jd-0.5)+0.5;
+  let depoch = wjd-(GREGORIAN_EPOCH-1);
+  let quadricent = Math.floor(depoch/146097);
+  let dqc = mod(depoch,146097);
+  let cent = Math.floor(dqc/36524);
+  let dcent = mod(dqc,36524);
+  let quad = Math.floor(dcent/1461);
+  let dquad = mod(dcent,1461);
+  let yindex = Math.floor(dquad/365);
+  let year = (quadricent*400)+(cent*100)+(quad*4)+yindex;
+  if (!((cent===4)||(yindex===4))) year++;
+  let yearday = wjd - gregorianToJD(year,1,1);
+  let leapadj = (wjd < gregorianToJD(year,3,1)) ? 0 : (isLeapGregorian(year)?1:2);
+  let month = Math.floor((((yearday+leapadj)*12)+373)/367);
+  let day = (wjd - gregorianToJD(year,month,1))+1;
+  return {year, month, day: Math.round(day)};
+}
+function islamicToJD(y,m,d){
+  return d+Math.ceil(29.5*(m-1))+(y-1)*354+Math.floor((3+(11*y))/30)+ISLAMIC_EPOCH-1;
+}
+function jdToIslamic(jd){
+  jd = Math.floor(jd) + 0.5;
+  const year = Math.floor(((30 * (jd - ISLAMIC_EPOCH)) + 10646) / 10631);
+  const month = Math.min(12, Math.ceil((jd - (29 + islamicToJD(year, 1, 1))) / 29.5) + 1);
+  const day = Math.round((jd - islamicToJD(year, month, 1)) + 1);
+  return { year, month, day };
+}
+function isLeapIslamic(y){ return mod((y*11)+14,30) < 11; }
+function islamicMonthLength(y,m){ if(m===12&&isLeapIslamic(y))return 30; return (m%2===1)?30:29; }
+
+const gregMonths = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const hijriMonths = ["محرم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوال","ذو القعدة","ذو الحجة"];
+const dayNames = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+
+function render(){
+  const today = new Date();
+  const y = today.getFullYear(), m = today.getMonth()+1, d = today.getDate();
+  const todayJD = gregorianToJD(y, m, d);
+  const hToday = jdToIslamic(todayJD);
+
+  document.getElementById('gregDayName').textContent = dayNames[today.getDay()];
+  document.getElementById('gregFullDate').textContent = d + ' ' + gregMonths[m-1] + ' ' + y + ' م';
+  document.getElementById('hijriDayName').textContent = dayNames[today.getDay()];
+  document.getElementById('hijriFullDate').textContent = hToday.day + ' ' + hijriMonths[hToday.month-1] + ' ' + hToday.year + ' هـ';
+
+  const startOfYear = new Date(y, 0, 1);
+  const daysPassed = Math.floor((today - startOfYear) / 86400000);
+  document.getElementById('weekNum').textContent = Math.ceil((daysPassed + startOfYear.getDay() + 1) / 7);
+  document.getElementById('dayOfYear').textContent = daysPassed + 1;
+  const endOfYear = new Date(y, 11, 31);
+  document.getElementById('daysLeft').textContent = Math.floor((endOfYear - today) / 86400000);
+
+  // Week table (today + next 6 days)
+  const weekTable = document.getElementById('weekTable');
+  for(let i=0;i<7;i++){
+    const dt = new Date(today);
+    dt.setDate(today.getDate()+i);
+    const jd = gregorianToJD(dt.getFullYear(), dt.getMonth()+1, dt.getDate());
+    const h = jdToIslamic(jd);
+    const row = document.createElement('tr');
+    if(i===0) row.className = 'today-row';
+    row.innerHTML = `<td>${dayNames[dt.getDay()]}${i===0?' (اليوم)':''}</td><td>${h.day} ${hijriMonths[h.month-1]} ${h.year}</td><td>${dt.getDate()} ${gregMonths[dt.getMonth()]} ${dt.getFullYear()}</td>`;
+    weekTable.appendChild(row);
+  }
+
+  // Current Hijri month full table
+  document.getElementById('monthTitle').textContent = 'شهر ' + hijriMonths[hToday.month-1] + ' ' + hToday.year + ' هـ كاملاً';
+  const monthTable = document.getElementById('monthTable');
+  const monthLen = islamicMonthLength(hToday.year, hToday.month);
+  const firstDayJD = islamicToJD(hToday.year, hToday.month, 1);
+  for(let dnum=1; dnum<=monthLen; dnum++){
+    const jd = firstDayJD + (dnum-1);
+    const g = jdToGregorian(jd);
+    const dow = new Date(g.year, g.month-1, g.day).getDay();
+    const row = document.createElement('tr');
+    if(dnum === hToday.day) row.className = 'today-row';
+    row.innerHTML = `<td>${dnum} ${hijriMonths[hToday.month-1]}${dnum===hToday.day?' (اليوم)':''}</td><td>${dayNames[dow]}</td><td>${g.day} ${gregMonths[g.month-1]} ${g.year}</td>`;
+    monthTable.appendChild(row);
+  }
+}
+
+render();
+</script>
+</body>
+</html>
