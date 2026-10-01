@@ -1,38 +1,262 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap - MrZapto | جميع الصفحات</title>
-    <meta name="description" content="جميع صفحات موقع MrZapto - أدوات حساب العمر والتاريخ الهجري والميلادي">
+<meta charset="UTF-8">
+<link rel="canonical" href="https://mrzapto.online/sitemap.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خريطة الموقع - جميع الصفحات | حساب العمر</title>
+<meta name="description" content="جميع صفحات موقع حساب العمر - حاسبات العمر بالهجري والميلادي، مواليد السنوات، تحويل التاريخ الهجري.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#123C3D; --teal-700:#1D5253; --gold-600:#C9973B; --gold-700:#A97C29;
+    --sand-50:#F2F5F3; --cream:#FFFDF8; --ink-900:#1B1F1E; --ink-600:#55605B; --moon-100:#E7ECEF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Tajawal', sans-serif; background:var(--sand-50); color:var(--ink-900); line-height:1.7;}
+  h1,h2,h3,.brand{font-family:'Almarai', sans-serif;}
+  a{color:var(--gold-700); text-decoration:none;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 20px;}
+
+  header{background:var(--teal-900); padding:18px 0;}
+  .brand{color:var(--cream); font-size:22px; font-weight:800; text-decoration:none;}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  .brand-link{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .main-nav{display:flex; gap:18px; flex-wrap:wrap;}
+  .main-nav a{color:var(--moon-100); text-decoration:none; font-size:14px; font-weight:700; transition:color .2s;}
+  .main-nav a:hover{color:var(--gold-600);}
+  .nav-toggle{display:none; background:none; border:none; color:var(--cream); font-size:24px; cursor:pointer;}
+  @media(max-width:640px){
+    .nav-toggle{display:block;}
+    .main-nav{display:none; width:100%; flex-direction:column; gap:14px; padding-top:14px;}
+    .main-nav.open{display:flex;}
+  }
+
+  .hero{background:var(--teal-900); padding:50px 0 60px; text-align:center;}
+  .hero h1{color:var(--cream); font-size:clamp(26px,4vw,38px); font-weight:800; margin-bottom:14px;}
+  .hero p.sub{color:var(--moon-100); max-width:640px; margin:0 auto; font-size:17px;}
+
+  section{padding:50px 0;}
+  section.alt{background:var(--cream);}
+
+  .section-head{text-align:center; margin-bottom:32px;}
+  .section-head h2{font-size:24px; color:var(--ink-900); margin-bottom:8px; position:relative; display:inline-block;}
+  .section-head h2::after{
+    content:""; display:block; width:56px; height:3px; background:var(--gold-600);
+    border-radius:4px; margin:10px auto 0;
+  }
+  .section-head p{color:var(--ink-600); font-size:15px; max-width:560px; margin:8px auto 0;}
+
+  .cards-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+    gap:16px;
+  }
+
+  .card{
+    background:var(--cream); border-radius:10px; padding:18px 20px;
+    border-top:3px solid var(--gold-600); display:block;
+    transition:transform .2s, box-shadow .2s;
+    box-shadow:0 2px 8px rgba(18,60,61,0.06);
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 12px 24px rgba(18,60,61,0.12);}
+  .card h3{font-size:16px; color:var(--teal-900); margin-bottom:6px; font-weight:800;}
+  .card p{font-size:13.5px; color:var(--ink-600); margin:0;}
+
+  .card.gold-top{border-top-color:var(--gold-700);}
+  .card.teal-top{border-top-color:var(--teal-700);}
+
+  .back-home{
+    text-align:center; margin-top:30px;
+  }
+  .back-home a{
+    display:inline-block; background:var(--gold-600); color:var(--teal-900);
+    padding:12px 30px; border-radius:8px; font-weight:800;
+    font-family:'Almarai', sans-serif; transition:background .2s;
+  }
+  .back-home a:hover{background:var(--gold-700);}
+
+  .site-footer{background:var(--teal-900); color:var(--moon-100); padding:44px 0 20px; font-size:14px;}
+  .footer-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-bottom:28px;}
+  @media(max-width:640px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-col h4{color:var(--cream); font-family:'Almarai',sans-serif; font-size:15px; margin-bottom:12px;}
+  .footer-col a{display:block; color:var(--moon-100); text-decoration:none; font-size:13.5px; margin-bottom:8px; opacity:.85;}
+  .footer-col a:hover{opacity:1; color:var(--gold-600);}
+  .footer-bottom{text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:13px; opacity:.8;}
+</style>
 </head>
 <body>
-    <h1>جميع صفحات الموقع - Sitemap</h1>
-    <ul>
-        <li><a href="https://mrzapto.online/">الصفحة الرئيسية - Home</a></li>
-        <li><a href="https://mrzapto.online/farq-al-omor">فرق العمر - Age Difference</a></li>
-        <li><a href="https://mrzapto.online/farq-bein-tareekhain">فرق بين تاريخين - Date Difference</a></li>
-        <li><a href="https://mrzapto.online/hasabat-omr-altifl">حسابة عمر الطفل - Child Age Calculator</a></li>
-        <li><a href="https://mrzapto.online/hijri-1390">التاريخ الهجري 1390 - Hijri 1390</a></li>
-        <li><a href="https://mrzapto.online/hijri-1402">التاريخ الهجري 1402 - Hijri 1402</a></li>
-        <li><a href="https://mrzapto.online/hijri-1414">التاريخ الهجري 1414 - Hijri 1414</a></li>
-        <li><a href="https://mrzapto.online/hijri-1427">التاريخ الهجري 1427 - Hijri 1427</a></li>
-        <li><a href="https://mrzapto.online/hijri-1433">التاريخ الهجري 1433 - Hijri 1433</a></li>
-        <li><a href="https://mrzapto.online/hisab-al-omor-belmiladi">حساب العمر بالميلادي - Age by Gregorian</a></li>
-        <li><a href="https://mrzapto.online/kam-omri-belhijri">كم عمري بالهجري - My Age in Hijri</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1983">مواليد 1983 - Born 1983</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1984">مواليد 1984 - Born 1984</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1987">مواليد 1987 - Born 1987</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1990">مواليد 1990 - Born 1990</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1991">مواليد 1991 - Born 1991</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1993">مواليد 1993 - Born 1993</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1994">مواليد 1994 - Born 1994</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1995">مواليد 1995 - Born 1995</a></li>
-        <li><a href="https://mrzapto.online/mawalid-1998">مواليد 1998 - Born 1998</a></li>
-        <li><a href="https://mrzapto.online/mawalid-2005">مواليد 2005 - Born 2005</a></li>
-        <li><a href="https://mrzapto.online/mawalid-2009">مواليد 2009 - Born 2009</a></li>
-        <li><a href="https://mrzapto.online/tahweel-altareekh">تحويل التاريخ - Date Converter</a></li>
-        <li><a href="https://mrzapto.online/tareekh-alyoum">تاريخ اليوم - Today's Date</a></li>
-    </ul>
+
+<header>
+  <div class="wrap nav-wrap">
+    <a href="/" class="brand-link">
+      <svg width="34" height="34" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <circle cx="19" cy="19" r="19" fill="#C9973B"/>
+        <text x="19" y="26" font-family="Almarai, sans-serif" font-size="20" font-weight="800" fill="#123C3D" text-anchor="middle">ع</text>
+      </svg>
+      <span class="brand">حساب العمر</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="القائمة">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="/">الرئيسية</a>
+      <a href="/hisab-al-omor-belmiladi">بالميلادي</a>
+      <a href="/kam-omri-belhijri">بالهجري</a>
+      <a href="/farq-al-omor">فرق العمر</a>
+      <a href="/hasabat-omr-altifl">عمر الطفل</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>خريطة الموقع</h1>
+    <p class="sub">جميع صفحات موقع حساب العمر في مكان واحد — تصفح بسهولة واختر الأداة التي تحتاجها.</p>
+  </div>
+</div>
+
+<!-- الحاسبات الرئيسية -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>الحاسبات الرئيسية</h2>
+      <p>الأدوات الأساسية لحساب العمر والفرق بين التواريخ</p>
+    </div>
+    <div class="cards-grid">
+      <a href="/" class="card">
+        <h3>الحاسبة الرئيسية</h3>
+        <p>حساب العمر بالهجري والميلادي بضغطة واحدة</p>
+      </a>
+      <a href="/hisab-al-omor-belmiladi" class="card">
+        <h3>حساب العمر بالميلادي</h3>
+        <p>احسب عمرك بالتقويم الميلادي بدقة</p>
+      </a>
+      <a href="/kam-omri-belhijri" class="card">
+        <h3>كم عمري بالهجري</h3>
+        <p>حوّل عمرك من الميلادي إلى الهجري</p>
+      </a>
+      <a href="/farq-al-omor" class="card">
+        <h3>فرق العمر بين شخصين</h3>
+        <p>احسب الفرق العمري بين أي شخصين</p>
+      </a>
+      <a href="/hasabat-omr-altifl" class="card">
+        <h3>حاسبة عمر الطفل</h3>
+        <p>احسب عمر طفلك بالسنوات والأشهر والأيام</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- مواليد حسب السنة -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>مواليد حسب السنة</h2>
+      <p>اعرف عمرك بالضبط إذا كنت من مواليد هذه السنوات</p>
+    </div>
+    <div class="cards-grid">
+      <a href="/mawalid-1983" class="card gold-top"><h3>مواليد 1983</h3><p>عمر مواليد 1983 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1984" class="card gold-top"><h3>مواليد 1984</h3><p>عمر مواليد 1984 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1987" class="card gold-top"><h3>مواليد 1987</h3><p>عمر مواليد 1987 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1990" class="card gold-top"><h3>مواليد 1990</h3><p>عمر مواليد 1990 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1991" class="card gold-top"><h3>مواليد 1991</h3><p>عمر مواليد 1991 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1993" class="card gold-top"><h3>مواليد 1993</h3><p>عمر مواليد 1993 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1994" class="card gold-top"><h3>مواليد 1994</h3><p>عمر مواليد 1994 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1995" class="card gold-top"><h3>مواليد 1995</h3><p>عمر مواليد 1995 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-1998" class="card gold-top"><h3>مواليد 1998</h3><p>عمر مواليد 1998 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-2005" class="card gold-top"><h3>مواليد 2005</h3><p>عمر مواليد 2005 بالسنوات والأشهر</p></a>
+      <a href="/mawalid-2009" class="card gold-top"><h3>مواليد 2009</h3><p>عمر مواليد 2009 بالسنوات والأشهر</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- تحويل التاريخ الهجري -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>تحويل التاريخ الهجري</h2>
+      <p>حوّل السنوات الهجرية إلى الميلادية والعكس</p>
+    </div>
+    <div class="cards-grid">
+      <a href="/hijri-1390" class="card teal-top"><h3>1390 هجري</h3><p>ما يوافق 1390 هجري بالميلادي</p></a>
+      <a href="/hijri-1402" class="card teal-top"><h3>1402 هجري</h3><p>ما يوافق 1402 هجري بالميلادي</p></a>
+      <a href="/hijri-1414" class="card teal-top"><h3>1414 هجري</h3><p>ما يوافق 1414 هجري بالميلادي</p></a>
+      <a href="/hijri-1427" class="card teal-top"><h3>1427 هجري</h3><p>ما يوافق 1427 هجري بالميلادي</p></a>
+      <a href="/hijri-1433" class="card teal-top"><h3>1433 هجري</h3><p>ما يوافق 1433 هجري بالميلادي</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- أدوات التاريخ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>أدوات التاريخ</h2>
+      <p>تحويل التواريخ ومعرفة تاريخ اليوم</p>
+    </div>
+    <div class="cards-grid">
+      <a href="/tahweel-altareekh" class="card">
+        <h3>تحويل التاريخ</h3>
+        <p>حوّل أي تاريخ بين الهجري والميلادي</p>
+      </a>
+      <a href="/tareekh-alyoum" class="card">
+        <h3>تاريخ اليوم</h3>
+        <p>اعرف تاريخ اليوم بالهجري والميلادي</p>
+      </a>
+      <a href="/farq-bein-tareekhain" class="card">
+        <h3>الفرق بين تاريخين</h3>
+        <p>احسب المدة بين أي تاريخين</p>
+      </a>
+    </div>
+    <div class="back-home">
+      <a href="/">العودة إلى الحاسبة الرئيسية ←</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>الحاسبات الرئيسية</h4>
+        <a href="/">الحاسبة الرئيسية (هجري وميلادي)</a>
+        <a href="/hisab-al-omor-belmiladi">حساب العمر بالميلادي</a>
+        <a href="/kam-omri-belhijri">كم عمري بالهجري</a>
+        <a href="/farq-al-omor">فرق العمر بين شخصين</a>
+        <a href="/hasabat-omr-altifl">حاسبة عمر الطفل</a>
+      </div>
+      <div class="footer-col">
+        <h4>مواليد حسب السنة</h4>
+        <a href="/mawalid-1983">مواليد 1983</a>
+        <a href="/mawalid-1984">مواليد 1984</a>
+        <a href="/mawalid-1987">مواليد 1987</a>
+        <a href="/mawalid-1990">مواليد 1990</a>
+        <a href="/mawalid-1991">مواليد 1991</a>
+        <a href="/mawalid-1993">مواليد 1993</a>
+        <a href="/mawalid-1994">مواليد 1994</a>
+        <a href="/mawalid-1995">مواليد 1995</a>
+        <a href="/mawalid-1998">مواليد 1998</a>
+        <a href="/mawalid-2005">مواليد 2005</a>
+        <a href="/mawalid-2009">مواليد 2009</a>
+      </div>
+      <div class="footer-col">
+        <h4>تحويل التاريخ الهجري</h4>
+        <a href="/hijri-1390">1390 هجري</a>
+        <a href="/hijri-1402">1402 هجري</a>
+        <a href="/hijri-1414">1414 هجري</a>
+        <a href="/hijri-1427">1427 هجري</a>
+        <a href="/hijri-1433">1433 هجري</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 حساب العمر - جميع الحقوق محفوظة · <a href="/sitemap.html" style="color:var(--gold-600);">خريطة الموقع</a></div>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){
+  document.getElementById('mainNav').classList.toggle('open');
+}
+</script>
 </body>
 </html>
